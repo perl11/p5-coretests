@@ -2,3 +2,9 @@ v5.*/C-COMPILED/xtestc/
 v5.*/t/*/*.c
 v5.*/t/*/*.bin
 v5.*/t/tmpfile
+v5.*/C-COMPILED/.db
+v5.*/C-COMPILED/Op_write.tmp
+v5.*/C-COMPILED/ccode*
+v5.*/C-COMPILED/f.db
+v5.*/C-COMPILED/a
+v5.*/C-COMPILED/xx.bak
