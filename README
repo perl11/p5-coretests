@@ -1,0 +1,4 @@
+perl5 coretests for the B::C compiler
+
+but eventually also for other implementations.
+allows parallel testing.
