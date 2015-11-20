@@ -1,4 +1,25 @@
-perl5 coretests for the B::C compiler
+versioned perl5 coretests
 
-but eventually also for other implementations.
-allows parallel testing.
+For the B::C compiler, but eventually also for other implementations.
+Allows parallel testing and failure tracking.
+
+See https://github.com/rurban/perl-compiler/issues/332 for the specs
+and https://github.com/rakudo-p5/roast5 for a different perl6-style testsuite.
+
+Here we just copy over the full p5p core tests per major important version
+and add a directory to drive the tests. C-COMPILED is for the B::C/perlcc tests.
+The idea to add this as git submodule to your testsuite, similar to the perl6
+spectests.
+
+Some test sources needed to be adjusted to work across multiple implementations
+and versions. The eventual goal is to have only one latest version and symlink
+old versions to it, back to 5.6.2. For now we keep the versioned directories.
+
+The original p5p core testsuite works only 100% with p5p perl5, but not with a
+compiled perl, divided into seperate compile-time and run-time phases, and not with
+other implementations, like cperl, perlito, rakudo-p5 or p2.
+This version overrides the handling of subtests and shelling out to call the
+executable via run_perl.
+
+Brought to you by cPanel, which uses B::C compiled 5.14 with -O3 --staticxs
+in production and soon compiled 5.22

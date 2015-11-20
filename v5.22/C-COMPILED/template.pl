@@ -11,7 +11,7 @@ use Test::More;
 
 BEGIN {
   use FindBin;
-  # t/CORE-v5.22/C-COMPILED/op/bla.t => t/lib
+  # t/CORE/v5.22/C-COMPILED/op/bla.t => t/CORE/lib
   unshift @INC, $FindBin::Bin . "/../../../lib";
 }
 
@@ -70,7 +70,8 @@ pass( $taint ? "Taint mode!" : "Not in taint mode" );
 unlink $bin_file, $c_file;
 
 my $PERL = $^X =~ m/\s/ ? qq{"$^X"} : $^X;
-my $blib = ( grep { m{blib/} } @INC ) ? '-I../../../blib/arch -I../../../blib/lib' : '';
+# cwd is t/CORE/v5.22/t
+my $blib = ( grep { m{blib/} } @INC ) ? '-I../../../../blib/arch -I../../../../blib/lib' : '';
 
 my $check = `$PERL -c $taint '$file_to_test' 2>&1`;
 like( $check, qr/syntax OK/, "$PERL -c $taint $file_to_test" );
@@ -104,7 +105,7 @@ foreach my $optimization (@optimizations) {
     my $harness_opts = '';
     $harness_opts = '-Wall' if $ENV{VERBOSE} && $ENV{WARNINGS};
     $harness_opts .= $ENV{VERBOSE} ? '' : ' -q';
-    $cmd = "$PERL $FindBin::Bin/../../../../script/cc_harness $harness_opts $c_file -o $bin_file 2>&1";
+    $cmd = "$PERL $FindBin::Bin/../../../../../script/cc_harness $harness_opts $c_file -o $bin_file 2>&1";
     diag $cmd if $ENV{VERBOSE};
     my $compile_output = `$cmd`;
     note $compile_output if $compile_output;

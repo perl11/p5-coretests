@@ -1,15 +1,15 @@
 #!/bin/sh
-# assume t/CORE-v5.22 is the only base.
+# assume t/CORE/v5.22 is the only base.
 # check for equality in v5.14/{t,lib}/ and v5.22{t,lib} and symlink it then
 
 rp=`realpath $0`
 dir=`dirname $rp`
-# chdir to t/CORE-v5.22/C-COMPILED/../
+# chdir to t/CORE/v5.22/C-COMPILED/../
 pushd $dir/..
 
 TESTDIRS="base cmd comp extra io mro op re uni"
-NEWVERSION="CORE-v5.22"
-OLDVERSIONS="CORE-v5.14"
+NEWVERSION="CORE/v5.22"
+OLDVERSIONS="CORE/v5.14"
 
 for v in $OLDVERSIONS; do
     for d in $TESTDIRS; do
@@ -47,4 +47,3 @@ done
 popd
 
 popd
-
