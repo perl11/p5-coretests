@@ -10,10 +10,15 @@ BEGIN {
 use strict;
 use Config;
 
-INIT {
-    plan tests => 3;
-    eval 'use threads; use threads::shared';
-    skip_all("unable to load thread modules") if $@;
+skip_all_without_config(qw(useithreads d_getppid));
+skip_all_if_miniperl("no dynamic loading on miniperl, no threads");
+eval 'use threads; use threads::shared';
+plan tests => 3;
+if ($@) {
+  fail("unable to load thread modules");
+}
+else {
+  pass("thread modules loaded");
 }
 
 my ($pid, $ppid) = ($$, getppid());

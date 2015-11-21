@@ -58,10 +58,13 @@ op/attrhand.t         PLAN      BC issue #271 - Attribute::Handlers
 op/exists_sub.t       TESTS     Failed tests:  1-5
 op/gv.t               TESTS     Failed tests:  216, 223 PVLV: sv_2io stringifieth not, PVLV: -T does not stringify
 op/packagev.t         TESTS     Failed 30/328 subtests
+op/ref.t              TESTS     Failed tests:  72-73, 176-180 stringify
 op/smartmatch.t       TESTS     BC issue #219 - overload issue
 op/svleak.t           COMPAT    This uses uninstalled XS::APItest
 op/taint.t            PLAN      Failed tests:  1, 3, 391, 395, 750
 op/universal.t        TESTS     Failed test:  96
+op/write.t            TESTS     Failed tests:  330, 336, 343, 349, 357
+re/overload.t         TESTS     #219 overload stringify
 re/pat_re_eval.t      SIG       Exit signal is 11 SEGV
 uni/fold.t            EXIT      Exit code is 2
 uni/greek.t           TESTS     Failed 44/72 subtests
