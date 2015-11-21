@@ -3,8 +3,8 @@
 # tests for both real and emulated fork()
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
     require Config;
     skip_all('no fork')
 	unless ($Config::Config{d_fork} or $Config::Config{d_pseudofork});

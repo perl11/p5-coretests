@@ -2,10 +2,10 @@
 # Tests to ensure that we don't unexpectedly change prototypes of builtins
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
+    unshift @INC, 'lib';
 }
 
-BEGIN { require 't/CORE/test.pl'; }
+BEGIN { require 'test.pl'; }
 plan tests => 237;
 
 while (<DATA>) {

@@ -1,8 +1,8 @@
 #!./perl
 
 INIT {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 print "1..28\n";
@@ -13,7 +13,7 @@ $Is_Dosish = ($^O eq 'MSWin32' or $^O eq 'NetWare' or $^O eq 'dos' or
               $^O eq 'os2' or $^O eq 'cygwin' or
               $^O =~ /^uwin/);
 
-open($TST, 't/CORE/test.pl') || (die "Can't open harness");
+open($TST, 'test.pl') || (die "Can't open harness");
 binmode $TST if $Is_Dosish;
 if (eof(TST)) { print "not ok 1\n"; } else { print "ok 1\n"; }
 
@@ -53,7 +53,7 @@ unless (eof) { print "not ok 13\n"; } else { print "ok 13\n"; }
 if ($. == 0) { print "not ok 14\n"; } else { print "ok 14\n"; }
 
 $curline = $.;
-open(OTHER, 't/CORE/test.pl') || (die "Can't open harness: $!");
+open(OTHER, 'test.pl') || (die "Can't open harness: $!");
 binmode OTHER if (($^O eq 'MSWin32') || ($^O eq 'NetWare'));
 
 {

@@ -1,8 +1,8 @@
 #!./perl
 
 INIT {
-    require 't/CORE/test.pl';
-    unshift @INC, 't/CORE/lib';
+    require 'test.pl';
+    unshift @INC, 'lib';
 }
  
 plan (38);

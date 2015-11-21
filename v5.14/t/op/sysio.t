@@ -1,11 +1,11 @@
 #!./perl
 
 BEGIN {
-  require 't/CORE/test.pl';
+  require 'test.pl';
 }
 
 INIT {
-  unshift @INC, 't/CORE/lib';
+  unshift @INC, 'lib';
 }
 
 plan(tests => 48);

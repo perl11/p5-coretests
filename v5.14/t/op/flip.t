@@ -1,7 +1,7 @@
 #!./perl
 
 BEGIN {
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 plan(11);
@@ -23,7 +23,7 @@ is($y, '12E0123E0');
 {
 local $.;
 
-open(of,'t/CORE/test.pl') or die "Can't open harness: $!";
+open(of,'test.pl') or die "Can't open harness: $!";
 while (<of>) {
     (3 .. 5) && ($foo .= $_);
 }

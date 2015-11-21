@@ -4,8 +4,8 @@
 # they were properly removed in 5.9.
 
 INIT {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 require Tie::Array;

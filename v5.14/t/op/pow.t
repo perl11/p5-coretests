@@ -2,8 +2,8 @@
 # Now they'll be wanting biff! and zap! tests too.
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 # This calculation ought to be within 0.001 of the right answer.

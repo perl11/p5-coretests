@@ -1,8 +1,8 @@
 #!./perl
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 't';
+    require 'test.pl';
 }
 
 # Script to test auto flush on fork/exec/system/qx.  The idea is to

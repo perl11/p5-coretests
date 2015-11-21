@@ -1,7 +1,7 @@
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = '../lib';
+    unshift @INC,  '../lib';
     require './test.pl';
 }
 
@@ -55,7 +55,6 @@ my $c = chr(0x100);
         is(bytes::index($c, "\x80"), 1, "bytes::index under use bytes looks at bytes");
         is(bytes::rindex($c, "\xc4"), 0, "bytes::rindex under use bytes looks at bytes");
     }
-    
 }
 
 {

@@ -1,8 +1,8 @@
 #!./perl -w
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 # perlcc issue #166 https://code.google.com/p/perl-compiler/issues/detail?id=166

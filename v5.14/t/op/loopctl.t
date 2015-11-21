@@ -32,7 +32,7 @@
 #  -- .robin. <robin@kitsite.com>  2001-03-13
 INIT {
     unshift @INC, "./lib";
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 plan( tests => 54 );

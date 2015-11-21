@@ -7,7 +7,7 @@
 #   Run with -debug for debugging output.
 
 BEGIN {
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 use Config;
@@ -239,7 +239,7 @@ END_MARK_TWO
     print "not ok: got unexpected warning \$msg\\n";
 } }
 
-require 't/CORE/test.pl';
+require 'test.pl';
 curr_test($test);
 
 # some of the variables which the closure will access

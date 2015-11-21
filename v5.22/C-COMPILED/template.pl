@@ -31,6 +31,7 @@ my ( $file_to_test, $path ) = fileparse($0);
 my ( $before, $after ) = split( 'C-COMPILED/', $path );
 my $short_path = $path;
 $short_path =~ s{^.*C-COMPILED/+}{};
+$short_path = '../lib/' if $short_path eq 'lib/';
 $file_to_test = $short_path . $file_to_test;
 
 # The file that tracks acceptable failures in the compiled unit tests.

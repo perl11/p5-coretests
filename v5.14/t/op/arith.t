@@ -1,7 +1,7 @@
 #!./perl -w
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
+    unshift @INC, 'lib';
 }
 
 print "1..145\n";

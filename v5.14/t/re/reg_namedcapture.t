@@ -1,7 +1,7 @@
 #!./perl
 
 BEGIN {
-    require q(t/CORE/test.pl);
+    require q(test.pl);
 }
 
 # WARNING: Do not directly use any modules as part of this test code.

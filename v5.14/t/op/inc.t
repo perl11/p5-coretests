@@ -1,7 +1,7 @@
 #!./perl
 
 
-require 't/CORE/test.pl';
+require 'test.pl';
 use warnings;
 use strict;
 

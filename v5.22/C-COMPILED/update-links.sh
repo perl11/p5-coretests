@@ -4,10 +4,10 @@
 
 rp=`realpath $0`
 dir=`dirname $rp`
-# chdir to t/CORE/v5.22/C-COMPILED/../
+# chdir to t/CORE/v5.xx
 pushd $dir/..
 
-TESTDIRS="base cmd comp extra io mro op re uni"
+TESTDIRS="base cmd comp extra io mro op opbasic re uni"
 NEWVERSION="CORE/v5.22"
 OLDVERSIONS="CORE/v5.14"
 
@@ -20,21 +20,23 @@ for v in $OLDVERSIONS; do
                 rm $old
                 ln -s ../$NEWVERSION/$new $old
             else
-                diff -bu $old $new
+                if [ -e $old -a -e $new ]; then
+                    diff -bu $old $new
+                fi
             fi
         done
     done
 done
 
-#exit
-
-pushd t/
+pushd C-COMPILED 2>/dev/null
 for d in $TESTDIRS; do
-    pushd $d
+    test -d $d || mkdir $d
+    pushd $d 2>/dev/null
     echo "* $d"
     # cleanup before link recreation
     rm -f *.t ||:
-    test -d ../../t/$d 
+    # from t/CORE/v5.22/C-COMPILED/$d to t/CORE/v5.22/t/$d
+    test -d ../../t/$d
     for t in ../../t/$d/*.t; do
         BN=$(basename $t)
         echo - updating: $BN
@@ -42,8 +44,22 @@ for d in $TESTDIRS; do
     done
     # remove threaded tests
     # rm -f *_thr.t ||:
-    popd
+    popd 2>/dev/null
 done
-popd
+for d in lib; do
+    test -d $d || mkdir $d
+    pushd $d 2>/dev/null
+    echo "* $d"
+    rm -f *.t ||:
+    # from t/CORE/v5.22/C-COMPILED/lib to t/CORE/v5.22/lib
+    test -d ../../$d
+    for t in ../../$d/*.t; do
+        BN=$(basename $t)
+        echo - updating: $BN
+        ln -s ../template.pl $BN
+    done
+    popd 2>/dev/null
+done
+popd 2>/dev/null
 
 popd

@@ -1,14 +1,14 @@
 #!./perl -w
 
 INIT {
-    unshift @INC, "t/CORE/lib";
+    unshift @INC, "lib";
 }
 
 # Test srand.
 
 use strict;
 
-require 't/CORE/test.pl';
+require 'test.pl';
 plan(tests => 9);
 
 # Generate a load of random numbers.

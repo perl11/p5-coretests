@@ -1,7 +1,7 @@
 #!./perl
 
 BEGIN {
-    require q(t/CORE/test.pl);
+    require q(test.pl);
 }
 
 # Do a basic test on all the tied methods of Tie::Hash::NamedCapture

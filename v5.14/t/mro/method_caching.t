@@ -6,7 +6,7 @@ no warnings 'redefine'; # we do a lot of this
 no warnings 'prototype'; # we do a lot of this
 
 BEGIN {
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 {

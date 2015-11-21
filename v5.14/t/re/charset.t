@@ -1,7 +1,7 @@
 # Test the /a, /d, etc regex modifiers
 
 BEGIN {
-      require q(t/CORE/test.pl);
+      require q(test.pl);
 }
 
 use strict;

@@ -2,7 +2,7 @@
 
 INIT {
     unshift @INC, "./lib";
-    require 't/CORE/test.pl';
+    require 'test.pl';
     $SIG{'__WARN__'} = sub { warn $_[0] if $DOWARN };
 }
 

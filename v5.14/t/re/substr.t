@@ -3,7 +3,7 @@
 #P = start of string  Q = start of substr  R = end of substr  S = end of string
 
 BEGIN {
-require q(t/CORE/test.pl);
+require q(test.pl);
 
 }
 use warnings ;

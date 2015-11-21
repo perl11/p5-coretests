@@ -8,7 +8,7 @@
 # the same. (and not ours)
 
 BEGIN {
-    require 't/CORE/test.pl';    
+    require 'test.pl';    
 }
 
 use strict;

@@ -1,7 +1,7 @@
 #!./perl -w
 
 BEGIN {
-    require 't/CORE/test.pl';
+    require 'test.pl';
     unless (is_perlcc_compiled()) {
       $SIG{__WARN__} = sub { die "Dying on warning: ", @_ };
     }

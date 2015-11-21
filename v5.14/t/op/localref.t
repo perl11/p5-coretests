@@ -1,7 +1,7 @@
 #!./perl
 
 unshift @INC, "./lib";
-require 't/CORE/test.pl';
+require 'test.pl';
 plan( tests => 64 );
 
 $aa = 1;

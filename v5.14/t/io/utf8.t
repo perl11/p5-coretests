@@ -1,7 +1,7 @@
 #!./perl
 
 INIT {
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 no utf8; # needed for use utf8 not griping about the raw octets

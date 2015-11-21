@@ -1118,10 +1118,11 @@ sub runperl_binary {
 
     my %filter = map { $_ => 1 } qw/-T -w/; # filter perl switches
     my $switches = join( ' ', grep { $filter{$_} } @{ $opts->{switches} || [] });
-    my $perlcc = "${stdin_prefix}perlcc $switches -O3 -o $bin $test $error";
-    print STDERR "# Compiling: > $perlcc\n";
-    ( $perlcc ) = $perlcc =~ m/(.*)/; # untaint
-    my $make = qx{$perlcc};
+    my $taint = $opts->{'switches'} ? join(' ',grep /-[tT]/, @{$opts->{'switches'}}) : '';
+    my $opt = $ENV{BC_OPT};
+    my $cmd = "$^X -I../../../../blib/arch -I../../../../blib/lib ../../../../script/perlcc $taint $opt -o $bin $test $error";
+    ( $cmd ) = $cmd =~ m/(.*)/; # untaint
+    my $make = qx{$cmd};
     map { print STDERR "# $_\n" } split /\n/, $make;
     return $make if $? || $opts->{perlcc_only};
 

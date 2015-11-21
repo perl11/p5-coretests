@@ -16,7 +16,7 @@ $| = 1;
 
 
 BEGIN {
-    require q(t/CORE/test.pl);
+    require q(test.pl);
 }
 
 plan tests => 452;  # Update this when adding/deleting tests.

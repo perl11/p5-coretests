@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 BEGIN {
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 plan(skip_all => "Your system has no SIGALRM") if !exists $SIG{ALRM};

@@ -2,7 +2,7 @@
 
 BEGIN {
     if( $ENV{PERL_CORE} ) {
-        @INC = '../lib';
+        unshift @INC,  '../lib';
         chdir 't';
     }
 }

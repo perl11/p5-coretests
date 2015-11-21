@@ -2,7 +2,7 @@
 
 INIT {
     unshift @INC, "./lib";
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 require Config; import Config;

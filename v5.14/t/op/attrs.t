@@ -3,8 +3,8 @@
 # Regression tests for attributes.pm and the C< : attrs> syntax.
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 use warnings;

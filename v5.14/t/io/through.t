@@ -1,8 +1,8 @@
 #!./perl
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 skip_all("VMS too picky about line endings for record-oriented pipes")

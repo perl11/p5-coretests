@@ -3,8 +3,8 @@
 # If you modify/add tests here, remember to update also ext/Fcntl/t/syslfs.t.
 
 BEGIN {
-	unshift @INC, 't/CORE/lib';
-	require 't/CORE/test.pl';
+	unshift @INC, 'lib';
+	require 'test.pl';
 	require Config;
 	# Don't bother if there are no quad offsets.
 	skip_all('no 64-bit file offsets')

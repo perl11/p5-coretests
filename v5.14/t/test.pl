@@ -846,7 +846,8 @@ sub runperl_binary {
     $bin =~ s/\.t$/\.bin/;
     unlink $bin if -e $bin;
     ( $ENV{PATH} ) = $ENV{PATH} =~ m/(.*)/;
-    my $cmd = "$^X -Iblib/arch -Iblib/lib script/perlcc $taint $opt -o $bin $test $error";
+    # t/CORE/v5.14/t/
+    my $cmd = "$^X -I../../../../blib/arch -I../../../../blib/lib ../../../../script/perlcc $taint $opt -o $bin $test $error";
     ( $cmd ) = $cmd =~ m/(.*)/;
     print STDERR "# running: make $bin\n";
     print STDERR "# $cmd\n" if $ENV{TEST_VERBOSE};

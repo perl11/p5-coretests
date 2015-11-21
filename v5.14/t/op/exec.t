@@ -2,7 +2,7 @@
 
 BEGIN {
     push @INC, ('./lib');
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 my $vms_exit_mode = 0;

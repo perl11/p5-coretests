@@ -1,6 +1,6 @@
 #!./perl
 
-BEGIN { require 't/CORE/test.pl' }
+BEGIN { require 'test.pl' }
 
 # Avoid using eq_array below as it uses .. internally.
 

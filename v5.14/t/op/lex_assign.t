@@ -1,7 +1,7 @@
 #!./perl
 
 INIT {
-    unshift @INC, 't/CORE/lib';
+    unshift @INC, 'lib';
 }
 
 $| = 1;

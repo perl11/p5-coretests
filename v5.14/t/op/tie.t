@@ -9,8 +9,8 @@
 # Warn or die msgs (if any) at - line 1234
 #
 
-unshift @INC, 't/CORE/lib';
-require 't/CORE/test.pl';
+unshift @INC, 'lib';
+require 'test.pl';
 
 $|=1;
 

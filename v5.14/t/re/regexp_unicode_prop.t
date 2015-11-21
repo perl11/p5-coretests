@@ -9,7 +9,7 @@ use warnings;
 use 5.010;
 
 BEGIN {
-    require q(t/CORE/test.pl);
+    require q(test.pl);
 }
 
 sub run_tests;

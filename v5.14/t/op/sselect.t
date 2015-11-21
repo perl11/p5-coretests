@@ -1,6 +1,6 @@
 #!./perl
 
-require 't/CORE/test.pl';
+require 'test.pl';
 
 plan (11);
 

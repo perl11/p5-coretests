@@ -5,8 +5,8 @@
 # argument on the stack.
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 my @ops = split //, 'rwxoRWXOezsfdlpSbctugkTMBAC';

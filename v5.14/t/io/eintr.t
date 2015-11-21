@@ -7,14 +7,14 @@
 # principally, don't segfault).
 
 INIT {
-    unshift @INC, 't/CORE/lib';
+    unshift @INC, 'lib';
 }
 
 use warnings;
 use strict;
 use Config;
 
-require 't/CORE/test.pl';
+require 'test.pl';
 
 my $piped;
 eval {

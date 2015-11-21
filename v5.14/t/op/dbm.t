@@ -1,8 +1,8 @@
 #!./perl
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 eval q{ require AnyDBM_File }; # not all places have dbm* functions

@@ -1,7 +1,7 @@
 #!./perl -w
 
 BEGIN {
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 plan(tests => 99);
 use strict;

@@ -15,7 +15,7 @@ $| = 1;
 
 
 BEGIN {
-    require q(t/CORE/test.pl);
+    require q(test.pl);
 }
 
 run_tests() unless caller;

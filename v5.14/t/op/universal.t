@@ -4,9 +4,9 @@
 #
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
+    unshift @INC, 'lib';
     $| = 1;
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 plan tests => 125;

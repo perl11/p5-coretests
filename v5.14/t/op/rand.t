@@ -17,7 +17,7 @@
 
 INIT {
     unshift @INC, "./lib";
-    require 't/CORE/test.pl';
+    require 'test.pl';
 }
 
 use strict;

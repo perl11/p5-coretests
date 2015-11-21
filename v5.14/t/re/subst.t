@@ -1,7 +1,7 @@
 #!./perl -w
 
 BEGIN {
-    require q(t/CORE/test.pl);
+    require q(test.pl);
     use Config;
 }
 

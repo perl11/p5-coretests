@@ -3,7 +3,7 @@
 binmode STDOUT, ":utf8";
 
 BEGIN {
-      require q(t/CORE/test.pl);
+      require q(test.pl);
 }
 
 use charnames ":full";

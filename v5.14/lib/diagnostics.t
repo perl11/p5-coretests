@@ -2,7 +2,7 @@
 
 BEGIN {
     chdir '..' if -d '../pod' && -d '../t';
-    @INC = 'lib';
+    unshift @INC,  'lib';
 }
 
 use Test::More tests => 6;

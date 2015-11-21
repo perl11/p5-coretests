@@ -4,7 +4,7 @@ BEGIN {
     unshift @INC, "./lib";
 }
 
-BEGIN { require 't/CORE/test.pl'; }
+BEGIN { require 'test.pl'; }
 
 plan( tests => 54 );
 

@@ -1,7 +1,7 @@
 BEGIN {
-	unshift @INC, 't/CORE/lib';
+	unshift @INC, 'lib';
 	require Config; import Config;
-	require 't/CORE/test.pl';
+	require 'test.pl';
 }
  
 plan tests => 44;

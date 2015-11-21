@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-BEGIN { require q(t/CORE/test.pl); }
+BEGIN { require q(test.pl); }
 
 plan(tests => 12);
 

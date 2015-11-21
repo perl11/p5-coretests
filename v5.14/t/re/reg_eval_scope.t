@@ -3,7 +3,7 @@
 # Test scoping issues with embedded code in regexps.
 
 BEGIN {
-    require q(t/CORE/test.pl);
+    require q(test.pl);
 }
 
 plan 17;

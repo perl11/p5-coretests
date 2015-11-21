@@ -5,7 +5,7 @@
 # --Schwern
 
 BEGIN {
-    require q(t/CORE/test.pl);
+    require q(test.pl);
 }
 
 use utf8;

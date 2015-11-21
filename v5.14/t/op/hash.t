@@ -1,6 +1,6 @@
 #!./perl -w
 
-BEGIN { require 't/CORE/test.pl' }
+BEGIN { require 'test.pl' }
 use strict;
 
 plan tests => 8;

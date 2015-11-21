@@ -3,8 +3,8 @@
 use Config;
 
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 use subs qw(lc lcfirst uc ucfirst);

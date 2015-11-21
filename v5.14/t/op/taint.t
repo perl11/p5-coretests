@@ -10,8 +10,8 @@
 # view perlcc issue #151 https://code.google.com/p/perl-compiler/issues/detail?id=151
 
 BEGIN {
-    unshift @INC, 't/CORE/lib', '.';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib', '.';
+    require 'test.pl';
     chdir 't/CORE';
 }
 
@@ -1865,7 +1865,7 @@ SKIP:
     like ($@, qr/^Insecure dependency in eval/);
 
     # Rather nice code to get a tainted undef by from Rick Delaney
-    open my $fh, 't/CORE/test.pl' or die $!;
+    open my $fh, 'test.pl' or die $!;
     seek $fh, 0, 2 or die $!;
     $tainted = <$fh>;
 

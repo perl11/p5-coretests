@@ -2,8 +2,8 @@
 
 use Errno;
 INIT {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 use strict 'vars';

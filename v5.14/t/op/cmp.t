@@ -1,7 +1,7 @@
 #!./perl
 
 BEGIN {
-       unshift @INC, 't/CORE/lib';
+       unshift @INC, 'lib';
 }
 
 # 2s complement assumption. Won't break test, just makes the internals of

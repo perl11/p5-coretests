@@ -2,8 +2,8 @@
 
 use Errno;
 BEGIN {
-    unshift @INC, 't/CORE/lib';
-    require 't/CORE/test.pl';
+    unshift @INC, 'lib';
+    require 'test.pl';
 }
 
 # Just a few very basic tests cribbed from t/io/print.t,
