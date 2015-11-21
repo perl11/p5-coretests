@@ -241,8 +241,7 @@ SKIP: {
 }
 
 TODO: {
-    local $TODO = q{Cannot expect to pass these tests once compiled, as they failed};
-
+    # fixed with 1.52_22
     local $SIG{__WARN__} = sub { $@ = shift };
 
     sub gimme {

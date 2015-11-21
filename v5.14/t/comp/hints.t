@@ -6,7 +6,6 @@ BEGIN {
     unshift @INC, 'lib';
     require 'test.pl';
 }
-# INIT { chdir "t/CORE"; }
 
 BEGIN { print "1..31\n"; }
 BEGIN {
@@ -108,7 +107,7 @@ BEGIN {
     print +($rf0 eq "z" ? "" : "not "), "ok 18 - \$^H{foo} correct before require\n";
 
     our($ra1, $ri1, $rf1, $rfe1);
-    BEGIN { require "t/CORE/comp/hints.aux"; }
+    BEGIN { require "comp/hints.aux"; }
     print +(!($ri1 & 0x04000000) ? "" : "not "), "ok 19 - \$^H cleared for require\n";
     print +(!defined($rf1) && !$rfe1 ? "" : "not "), "ok 20 - \$^H{foo} cleared for require\n";
 

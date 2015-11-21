@@ -12,7 +12,6 @@
 BEGIN {
     unshift @INC, 'lib', '.';
     require 'test.pl';
-    chdir 't/CORE';
 }
 
 use strict;

@@ -972,7 +972,7 @@ sub run_tests {
 
     {
     BEGIN {
-        unshift @INC, 't/CORE/';
+        unshift @INC, '';
     }
         use Cname;
 

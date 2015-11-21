@@ -46,5 +46,5 @@ else {
     die "/dev/null IS NOT A CHARACTER SPECIAL FILE!!!!\n" unless -c '/dev/null';
 }
 
-open($try, "Makefile.PL") || (die "Can't open Makefile.PL.");
-if (<$try> ne '') {print "ok 7\n";} else {print "not ok 7\n";}
+open(try, "CaseFolding.txt") || (die "Can't open CaseFolding.txt.");
+if (<try> ne '') {print "ok 7\n";} else {print "not ok 7\n";}

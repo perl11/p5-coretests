@@ -367,11 +367,29 @@ EOP
 }
 
 # Check that we don't auto-load packages
+SKIP: {
+    skip "staticly linked; may be preloaded", 4 unless $Config{usedl};
+    foreach (['powie::!', 'Errno']) {
+	my ($symbol, $package) = @$_;
+	foreach my $scalar_first ('', '$$symbol;') {
+	    my $desc = qq{Referencing %{"$symbol"}};
+	    $desc .= qq{ after mentioning \${"$symbol"}} if $scalar_first;
+	    $desc .= " doesn't load $package";
+
+	    fresh_perl_is(<<"EOP", 0, {}, $desc);
+use strict qw(vars subs);
+my \$symbol = '$symbol';
+$scalar_first;
+1 if %{\$symbol};
+print scalar %${package}::;
+EOP
+	}
+    }
+}
 SKIP: TODO: {
     skip "staticly linked; may be preloaded", 4 unless $Config{usedl};
-    local $TODO = "perlcc preloads those magic modules when it sees a tied symbol" if is_perlcc_compiled;
-    foreach (['powie::!', 'Errno'],
-	     ['powie::+', 'Tie::Hash::NamedCapture']) {
+    local $TODO = "perlcc preloads those magic modules when it sees a tied symbol" if is_perlcc_compiled();
+    foreach (['powie::+', 'Tie::Hash::NamedCapture']) {
 	my ($symbol, $package) = @$_;
 	foreach my $scalar_first ('', '$$symbol;') {
 	    my $desc = qq{Referencing %{"$symbol"}};

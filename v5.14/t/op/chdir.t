@@ -49,7 +49,7 @@ my $Cwd = abs_path;
 # Let's get to a known position
 SKIP: {
     my ($vol,$dir) = splitpath(abs_path,1);
-    my $test_dir = -d 't/CORE' ? 't/CORE' : '.';
+    my $test_dir = '.';
     my $compare_dir = (splitdir($dir))[-1];
 
     # VMS is case insensitive but will preserve case in EFS mode.
