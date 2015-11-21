@@ -1,6 +1,8 @@
 v5.*/C-COMPILED/xtestc/
 v5.*/t/*/*.c
 v5.*/t/*/*.bin
+v5.*/lib/*.c
+v5.*/lib/*.bin
 v5.*/t/tmp*
 v5.*/C-COMPILED/.db
 v5.*/C-COMPILED/Op_write.tmp
@@ -11,3 +13,4 @@ v5.*/C-COMPILED/xx.bak
 v5.14/t/Io_argv*
 v5.14/t/echo*
 v5.14/t/*/*.subtest*
+v5.14/lib/*.subtest*
