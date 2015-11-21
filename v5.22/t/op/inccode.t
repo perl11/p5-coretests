@@ -197,7 +197,7 @@ is( $ret, 'abc', 'do "abc.pl" sees return value' );
     my $got;
     #local @INC; # local fails on tied @INC
     my @old_INC = @INC; # because local doesn't work on tied arrays
-    unshift @INC,   ('lib', 'lib/Devel', sub { $got = $_[1]; return undef; });
+    @INC = ('lib', 'lib/Devel', sub { $got = $_[1]; return undef; });
     foreach my $filename ('/test_require.pm', './test_require.pm',
 			  '../test_require.pm') {
 	local %INC;
@@ -273,8 +273,8 @@ sub fake_module {
     !1
 }
 {
-    local unshift @INC,  @INC;
-    unshift @INC,  (\&fake_module)x2;
+    local @INC = @INC;
+    unshift @INC, (\&fake_module)x2;
     eval { require "${\'bralbalhablah'}" };
     like $@, qr/^Can't locate/,
         'require PADTMP passing freed var when @INC has multiple subs';
@@ -287,7 +287,7 @@ SKIP: {
         sub TIESCALAR { bless \my $foo }
         sub FETCH { study; our $count++; ${$_[0]} }
     }
-    local unshift @INC,  undef;
+    local @INC = undef;
     my $t = tie $INC[0], 'INCtie';
     my $called;
     $$t = sub { $called ++; !1 };
