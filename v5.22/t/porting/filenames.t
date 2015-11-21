@@ -23,7 +23,7 @@ LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, and LPT9
 
 BEGIN {
     chdir 't';
-    @INC = '../lib';
+    unshift @INC,  '../lib';
 }
 
 use strict;

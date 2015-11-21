@@ -10,7 +10,7 @@ BEGIN {
         # XXX that should be fixed
 
     chdir '..' unless -d 't';
-    @INC = qw(lib Porting t);
+    unshift @INC,  qw(lib Porting t);
     require 'test.pl';
     skip_all("pre-computed SHA1 won't match under EBCDIC") if $::IS_EBCDIC;
 }

@@ -4,7 +4,7 @@
 #
 # BEGIN {
 #   chdir 't' if -d 't';
-#   @INC = '../lib';
+#   unshift @INC,  '../lib';
 # }
 #
 # Its primary purpose is to clear @INC so core tests don't pick up
@@ -35,10 +35,10 @@ sub import {
     my ($abs, $chdir, $setopt);
     foreach (@_) {
 	if ($_ eq 'U2T') {
-	    @INC = @up_2_t;
+	    unshift @INC,  @up_2_t;
 	    $setopt = 1;
 	} elsif ($_ eq 'U1') {
-	    @INC = '../lib';
+	    unshift @INC,  '../lib';
 	    $setopt = 1;
 	} elsif ($_ eq 'NC') {
 	    delete $ENV{PERL_CORE}
@@ -47,7 +47,7 @@ sub import {
 	} elsif ($_ eq 'T') {
 	    $chdir = '..'
 		unless -f 't/TEST' && -f 'MANIFEST' && -d 'lib' && -d 'ext';
-	    @INC = 'lib';
+	    unshift @INC,  'lib';
 	    $setopt = 1;
 	} else {
 	    die "Unknown option '$_'";
@@ -76,18 +76,18 @@ sub import {
 	    if ($0 =~ s!^((?:ext|dist|cpan)[\\/][^\\/]+)[\\/](.*\.t)$!$2!) {
 		# Looks like a test in ext.
 		$chdir = $1;
-		@INC = @up_2_t;
+		unshift @INC,  @up_2_t;
 		$setopt = 1;
 		$^X =~ s!^\.([\\/])!..$1..$1!;
 	    } else {
 		$chdir = 't';
-		@INC = '../lib';
+		unshift @INC,  '../lib';
 		$setopt = $0 =~ m!^lib/!;
 	    }
 	} else {
 	    # (likely) we're being run by t/TEST or t/harness, and we're a test
 	    # in t/
-	    @INC = '../lib';
+	    unshift @INC,  '../lib';
 	}
     }
 
@@ -98,7 +98,7 @@ sub import {
     if ($abs) {
 	require File::Spec::Functions;
 	# Forcibly untaint this.
-	@INC = map { $_ = File::Spec::Functions::rel2abs($_); /(.*)/; $1 } @INC;
+	unshift @INC,  map { $_ = File::Spec::Functions::rel2abs($_); /(.*)/; $1 } @INC;
 	$^X = File::Spec::Functions::rel2abs($^X);
     }
 

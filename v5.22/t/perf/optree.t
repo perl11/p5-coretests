@@ -7,7 +7,7 @@ BEGIN {
     chdir 't';
     require './test.pl';
     skip_all_if_miniperl("No B under miniperl");
-    @INC = '../lib';
+    unshift @INC,  '../lib';
 }
 
 plan 24;

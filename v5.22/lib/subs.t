@@ -1,6 +1,6 @@
 #!./perl
 
 chdir 't' if -d 't';
-@INC = '../lib';
+unshift @INC,  '../lib';
 
 require "../t/lib/common.pl";

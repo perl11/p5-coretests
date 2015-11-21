@@ -2,7 +2,7 @@
 
 BEGIN {
     chdir 't';
-    @INC = "../lib";
+    unshift @INC,  "../lib";
     # Do not require test.pl, this file has its own framework.
 }
 

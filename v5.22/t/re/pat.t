@@ -1599,7 +1599,7 @@ EOP
             BEGIN {
                 unshift @INC, '../lib';
                 require utf8; require 'utf8_heavy.pl';
-                @INC = ();
+                unshift @INC,  ();
             }
             $name = 'A B';
             if ($name =~ /(\p{IsUpper}) (\p{IsUpper})/){

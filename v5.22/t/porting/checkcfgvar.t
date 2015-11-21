@@ -25,7 +25,7 @@ use Config;
 BEGIN {
     require "./test.pl";
     skip_all("Won't ship a release from EBCDIC") if $::IS_EBCDIC;
-    @INC = '..' if -f '../TestInit.pm';
+    unshift @INC,  '..' if -f '../TestInit.pm';
 }
 use TestInit qw(T A); # T is chdir to the top level, A makes paths absolute
 

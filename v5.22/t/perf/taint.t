@@ -16,7 +16,7 @@
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = ('../lib');
+    unshift @INC,  ('../lib');
     require Config; import Config;
     require './test.pl';
     skip_all_if_miniperl("No Scalar::Util under miniperl");

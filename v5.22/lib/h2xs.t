@@ -11,7 +11,7 @@
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = '../lib';
+    unshift @INC,  '../lib';
     # FIXME (or rather FIXh2xs)
     require Config;
     if (($Config::Config{'extensions'} !~ m!\bDevel/PPPort\b!) ){

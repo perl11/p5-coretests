@@ -111,7 +111,7 @@ sub is_miniperl {
 sub set_up_inc {
 
     # Don’t clobber @INC under miniperl
-    #@INC = () unless is_miniperl;
+    #unshift @INC,  () unless is_miniperl;
     unshift @INC, @_;
 }
 

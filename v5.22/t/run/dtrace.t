@@ -5,7 +5,7 @@ my $dtrace;
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = '../lib';
+    unshift @INC,  '../lib';
     require './test.pl';
 
     skip_all_without_config("usedtrace");
@@ -133,7 +133,7 @@ D_SCRIPT
 );
 
 dtrace_like(<< 'PERL_SCRIPT',
-    BEGIN {@INC = '../lib'}
+    BEGIN {unshift @INC,  '../lib'}
     use strict;
     require HTTP::Tiny;
     do "run/dtrace.pl";

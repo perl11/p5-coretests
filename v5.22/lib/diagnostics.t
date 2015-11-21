@@ -2,8 +2,8 @@
 
 BEGIN {
     chdir '..' if -d '../pod' && -d '../t';
-    @INC = 'lib';
-    require './t/test.pl';
+    unshift @INC,  'lib';
+    require 'test.pl';
     plan(29);
 }
 
