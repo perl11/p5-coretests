@@ -37,6 +37,7 @@
 ../lib/integer.t             PLAN      Plan was valid
 ../lib/Internals.t           PLAN      Plan was valid
 ../lib/less.t                PLAN      Plan was valid
+../lib/locale.t              TESTS     Test results:
 ../lib/overload.t            BC        ../lib/overload.c is generated (-O3,-fno-fold)
 ../lib/overload64.t          PLAN      Plan was valid
 ../lib/overloading.t         PLAN      Plan was valid
@@ -63,36 +64,49 @@ mro/overload_c3.t            TESTS     overload stringify test 3 7
 mro/overload_c3_utf8.t       TESTS     overload stringify test 3 7
 mro/overload_dfs.t           TESTS     overload stringify test 3 7
 op/array_base.t              COMPAT    C issue #248 - deprecated array base feature - wont fix
+op/attrhand.t                BC        op/attrhand.c is generated (-O3,-fno-fold)
 op/blocks.t                  COMPAT    check order of execution of special blocks ( BEGIN included )
-op/const-optree.t            PLAN      Plan was valid
+op/caller.t                  TESTS     Test results:
+op/closure.t                 TESTS     Test results:
+op/const-optree.t            SIG       Exit signal is 11 SEGV
 op/coresubs.t                PLAN      uses B::walkoptree
+op/dbm.t                     TESTS     Test results:
 op/defins.t                  TESTS     Failed tests: 1 27 (no warnings)
 op/exists_sub.t              SIG       TODO: No output. and issue GH #290
 op/filetest.t                PLAN      Plan was valid (wrong test -t on $0, ran 420 of 431)
+op/index.t                   PLAN      Plan was valid
+op/leaky-magic.t             TESTS     Test results:
 op/lex.t                     COMPAT    Tests trigger errors at compilation time (reported C issue #266 which is a small subset)
 op/lex_assign.t              PLAN      wrong tie on B, ran 165 tests
 op/lexsub.t                  BC        B::SPECIAL::EGV
 op/lvref.t                   SIG       Exit signal is 6 SIGABRT
+op/magic.t                   TESTS     Test results:
 op/method.t                  BC        op/method.c is generated (-O3,-fno-fold)
-op/multideref.t              BC        op/multideref.c is generated (-O3,-fno-fold)
 op/mydef.t                   TODO      No TODO tests passed
 op/override.t                COMPAT    crazy test which override CORE::GLOBAL::require @BEGIN
 op/pack.t                    TESTS     Failed tests: 290-295, 463 format l! L!
 op/postfixderef.t            TESTS     Tests 77-81 Scalar/Array/Hash/Code/Glob dereference
 op/protowarn.t               PLAN      TODO: no output.
-op/require_errors.t          PLAN      Plan was valid
+op/readdir.t                 TESTS     Test results:
+op/readline.t                TESTS     Test results:
+op/ref.t                     TESTS     Test results:
 op/reset.t                   PLAN      Plan was valid
+op/stash.t                   TESTS     Test results:
+op/sub_lval.t                TESTS     Test results:
 op/svleak.t                  COMPAT    This test uses XS::APItest, which we don't install during perl install?
 op/threads-dirh.t            SKIP      threaded test
 op/threads.t                 SKIP      threaded test
 op/tie_fetch_count.t         PLAN      Plan was valid
+op/universal.t               TESTS     Test results:
 op/vec.t                     SIG       Exit signal is 11 SEGV
+op/warn.t                    TESTS     Test results:
 op/write.t                   SIG       Exit signal is 11 SEGV
 opbasic/magic_phase.t        PLAN      Plan was valid
 re/overload.t                TESTS     Failed tests:  1-3, 86. OL_MOD
 re/pat.t                     PLAN      pmop not stored, Eval-group, planned 774 tests but ran 460
 re/pat_advanced.t            PLAN      Failed tests:  817-818, missing method kt at 952
 re/pat_re_eval.t             PLAN      Eval-group not allowed at runtime
+re/pat_rt_report.t           TESTS     Test results:
 re/qr_gc.t                   TESTS     Test results:
 re/reg_eval_scope.t          PLAN      Eval-group not allowed at runtime
 re/reg_mesg.t                TESTS     Failed test:  204
@@ -104,16 +118,14 @@ uni/fold.t                   TESTS     Test results:
 uni/greek.t                  TESTS     Failed tests:  1-6, 9-12, 17-22, 25-28, 33-35, 37-39, 49-57, 59-61, 63-68
 uni/latin2.t                 TESTS     Failed tests:  3-6, 13-16, 19-22, 29-32, 35, 39, 73-80
 uni/method.t                 PLAN      C issue #254 - UNIVERSAL::can + eval
+uni/parser.t                 TESTS     Test results:
 uni/readline.t               TESTS     Failed test:  1
+uni/stash.t                  TESTS     Test results:
 uni/variables.t              PLAN      TODO: Failed 48383/65880 subtests
 xtestc/0015.t                TESTS     Output is: "a\nb\n\n"
 xtestc/0046.t                TESTS     Output is: ""
-xtestc/0095.t                BC        xtestc/0095.c is generated (-O3,-fno-fold)
-xtestc/0103.t                TESTS     Output is: "Undefined subroutine B::svref ..."
-xtestc/0125.t                BC        xtestc/0125.c is generated (-O3,-fno-fold)
 xtestc/0163.t                TESTS     Output is: ""
 xtestc/0167.t                TESTS     Output is: "Wide character in crypt at ..."
-xtestc/0169.t                BC        xtestc/0169.c is generated (-O3,-fno-fold)
 xtestc/0173.t                TESTS     Output is: "ok 1\nok 2\nok 3\n"
 xtestc/0174.t                TESTS     Output is: "\C is deprecated in regex; ..."
 xtestc/0175.t                TESTS     Output is: "ok\n"
@@ -147,9 +159,8 @@ xtestc/0317.t                TESTS     Output is: "Can t locate object method kt
 xtestc/0319.t                TESTS     Output is: "Wide character in print at ..."
 xtestc/0321.t                TESTS     Output is: ""
 xtestc/0329.t                TESTS     Output is: "axxxx \n"
-xtestc/0350.t                BC        xtestc/0350.c is generated (-O3,-fno-fold)
 xtestc/0369.t                TESTS     Output is: ""
-xtestc/0371.t                BC        xtestc/0371.c is generated (-O3,-fno-fold)
+xtestc/0371.t                TESTS     Output is: ""
 xtestc/2052.t                TESTS     Output is: ""
 xtestc/2201.t                TESTS     Output is: ""
 xtestc/2381.t                TESTS     Output is: "Undefined subroutine ..."
@@ -159,6 +170,4 @@ xtestc/2741.t                TESTS     Output is: "SV = PVHV(0x100a9b540) at ...
 xtestc/2900.t                TESTS     Output is: "19518210 "
 xtestc/2901.t                TESTS     Output is: ""
 xtestc/2990.t                TESTS     Output is: ""
-xtestc/3052.t                BC        xtestc/3052.c is generated (-O3,-fno-fold)
-xtestc/3170.t                BC        xtestc/3170.c is generated (-O3,-fno-fold)
 xtestc/3200.t                TESTS     Output is: ""
