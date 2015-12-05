@@ -37,7 +37,6 @@
 ../lib/integer.t             PLAN      Plan was valid
 ../lib/Internals.t           PLAN      Plan was valid
 ../lib/less.t                PLAN      Plan was valid
-../lib/locale.t              TESTS     Test results:
 ../lib/overload.t            BC        ../lib/overload.c is generated (-O3,-fno-fold)
 ../lib/overload64.t          PLAN      Plan was valid
 ../lib/overloading.t         PLAN      Plan was valid
@@ -64,17 +63,14 @@ mro/overload_c3.t            TESTS     overload stringify test 3 7
 mro/overload_c3_utf8.t       TESTS     overload stringify test 3 7
 mro/overload_dfs.t           TESTS     overload stringify test 3 7
 op/array_base.t              COMPAT    C issue #248 - deprecated array base feature - wont fix
-op/attrhand.t                BC        op/attrhand.c is generated (-O3,-fno-fold)
 op/blocks.t                  COMPAT    check order of execution of special blocks ( BEGIN included )
 op/caller.t                  TESTS     Test results:
 op/closure.t                 TESTS     Test results:
-op/const-optree.t            SIG       Exit signal is 11 SEGV
 op/coresubs.t                PLAN      uses B::walkoptree
 op/dbm.t                     TESTS     Test results:
 op/defins.t                  TESTS     Failed tests: 1 27 (no warnings)
 op/exists_sub.t              SIG       TODO: No output. and issue GH #290
 op/filetest.t                PLAN      Plan was valid (wrong test -t on $0, ran 420 of 431)
-op/index.t                   PLAN      Plan was valid
 op/leaky-magic.t             TESTS     Test results:
 op/lex.t                     COMPAT    Tests trigger errors at compilation time (reported C issue #266 which is a small subset)
 op/lex_assign.t              PLAN      wrong tie on B, ran 165 tests
