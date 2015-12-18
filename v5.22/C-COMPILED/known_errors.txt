@@ -79,15 +79,16 @@ op/lex_assign.t              PLAN      wrong tie on B, ran 165 tests
 op/lexsub.t                  BC        B::SPECIAL::EGV
 op/lvref.t                   SIG       Exit signal is 6 SIGABRT
 op/magic.t                   TESTS     Test results:
-op/method.t                  BC        op/method.c is generated (-O3,-fno-fold)
+op/method.t                  PLAN      Plan was valid
 op/mydef.t                   TODO      No TODO tests passed
 op/override.t                COMPAT    crazy test which override CORE::GLOBAL::require @BEGIN
 op/pack.t                    TESTS     Failed tests: 290-295, 463 format l! L!
 op/postfixderef.t            TESTS     Tests 77-81 Scalar/Array/Hash/Code/Glob dereference
 op/protowarn.t               PLAN      TODO: no output.
 op/readdir.t                 TESTS     Test results:
+op/readline.t                TESTS     Test results:
 op/ref.t                     TESTS     Test results:
-op/reset.t                   PLAN      Plan was valid
+op/sprintf2.t                SEQ       Tests are in sequence
 op/stash.t                   TESTS     Test results:
 op/sub_lval.t                TESTS     Test results:
 op/svleak.t                  COMPAT    This test uses XS::APItest, which we don't install during perl install?
@@ -95,6 +96,7 @@ op/threads-dirh.t            SKIP      threaded test
 op/threads.t                 SKIP      threaded test
 op/tie_fetch_count.t         PLAN      Plan was valid
 op/universal.t               TESTS     Test results:
+op/vec.t                     TESTS     Test results:
 op/warn.t                    TESTS     Test results:
 op/write.t                   SIG       Exit signal is 11 SEGV
 opbasic/magic_phase.t        PLAN      Plan was valid
