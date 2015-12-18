@@ -67,6 +67,8 @@ op/attrhand.t                PLAN      Plan was valid
 op/blocks.t                  COMPAT    check order of execution of special blocks ( BEGIN included )
 op/caller.t                  TESTS     Test results:
 op/closure.t                 TESTS     Test results:
+op/const-optree.t            PLAN      Plan was valid
+op/coresubs.t                PLAN      Plan was valid
 op/dbm.t                     TESTS     Test results:
 op/defins.t                  TESTS     Failed tests: 1 27 (no warnings)
 op/exists_sub.t              SIG       TODO: No output. and issue GH #290
@@ -84,17 +86,15 @@ op/pack.t                    TESTS     Failed tests: 290-295, 463 format l! L!
 op/postfixderef.t            TESTS     Tests 77-81 Scalar/Array/Hash/Code/Glob dereference
 op/protowarn.t               PLAN      TODO: no output.
 op/readdir.t                 TESTS     Test results:
-op/readline.t                PLAN      Plan was valid
 op/ref.t                     TESTS     Test results:
 op/reset.t                   PLAN      Plan was valid
-op/sprintf2.t                SEQ       Tests are in sequence
+op/stash.t                   TESTS     Test results:
 op/sub_lval.t                TESTS     Test results:
 op/svleak.t                  COMPAT    This test uses XS::APItest, which we don't install during perl install?
 op/threads-dirh.t            SKIP      threaded test
 op/threads.t                 SKIP      threaded test
 op/tie_fetch_count.t         PLAN      Plan was valid
 op/universal.t               TESTS     Test results:
-op/vec.t                     SIG       Exit signal is 11 SEGV
 op/warn.t                    TESTS     Test results:
 op/write.t                   SIG       Exit signal is 11 SEGV
 opbasic/magic_phase.t        PLAN      Plan was valid
@@ -116,6 +116,7 @@ uni/latin2.t                 TESTS     Failed tests:  3-6, 13-16, 19-22, 29-32, 
 uni/method.t                 PLAN      C issue #254 - UNIVERSAL::can + eval
 uni/parser.t                 TESTS     Test results:
 uni/readline.t               TESTS     Failed test:  1
+uni/stash.t                  TESTS     Test results:
 uni/variables.t              PLAN      TODO: Failed 48383/65880 subtests
 xtestc/0015.t                TESTS     Output is: "a\nb\n\n"
 xtestc/0046.t                TESTS     Output is: ""

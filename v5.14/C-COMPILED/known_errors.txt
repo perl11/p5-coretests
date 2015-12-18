@@ -66,6 +66,7 @@ op/taint.t            PLAN      Failed tests:  1, 3, 391, 395, 750
 op/universal.t        TESTS     Failed test:  96
 op/write.t            TESTS     Failed tests:  330, 336, 343, 349, 357
 re/overload.t         TESTS     #219 overload stringify
+re/pat_re_eval.t      PLAN      Plan was valid
 uni/fold.t            EXIT      Exit code is 2
 uni/greek.t           TESTS     Failed 44/72 subtests
 uni/latin2.t          TESTS     Failed 26/94 subtests
