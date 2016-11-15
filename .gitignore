@@ -15,6 +15,5 @@ v5.*/C-COMPILED/a
 v5.*/C-COMPILED/xx.bak
 v5.14/t/Io_argv*
 v5.14/t/echo*
-v5.14/Op_write.tmp
 v5.22/C-COMPILED/known_errors.*
-v5.22/t/Op_write.tmp
+v5.*/t/Op_write.tmp
