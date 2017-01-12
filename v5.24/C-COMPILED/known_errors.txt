@@ -132,7 +132,6 @@ uni/stash.t                  TESTS     Test results:
 uni/universal.t              TESTS     Test results:
 uni/write.t                  TESTS     Test results:
 xtestc/0015.t                TESTS     Output is: "a\nb\n\n"
-xtestc/0028.t                TESTS     Output is: "Can t locate ccode28 ..."
 xtestc/0046.t                TESTS     Output is: ""
 xtestc/0081.t                TESTS     Output is: ""
 xtestc/0091.t                TESTS     Output is: "Constant subroutine INADDR ..."
@@ -152,7 +151,6 @@ xtestc/0191.t                TESTS     Output is: "bad\n"
 xtestc/0194.t                TESTS     Output is: "11279 s003 S 0:00.01 ccdave ..."
 xtestc/0196.t                TESTS     Output is: "m: Modification of a read ..."
 xtestc/0201.t                TESTS     Output is: "Prototype mismatch: sub ..."
-xtestc/0203.t                TESTS     Output is: "perlioutf8unixencoding(cp1252)"
 xtestc/0207.t                TESTS     Output is: ""
 xtestc/0222.t                TESTS     Output is: "Can t find string terminator ..."
 xtestc/0226.t                TESTS     Output is: ""
