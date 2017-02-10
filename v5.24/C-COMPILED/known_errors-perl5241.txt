@@ -68,7 +68,7 @@ mro/isarev_utf8.t            TESTS     Test results:
 mro/overload_c3.t            TESTS     Test results:
 mro/overload_c3_utf8.t       TESTS     Test results:
 mro/overload_dfs.t           TESTS     Test results:
-op/aelem_u.t                 PLAN      Plan was valid
+op/aelem_u.t                 COMPAT    cperl only
 op/array_base.t              COMPAT    C issue #248 - deprecated array base feature - wont fix
 op/attrhand.t                PLAN      Plan was valid
 op/attrs.t                   TESTS     Test results:
@@ -80,7 +80,7 @@ op/closure.t                 TESTS     Test results:
 op/const-optree.t            PLAN      Plan was valid
 op/coreamp.t                 PLAN      Plan was valid
 op/coresubs.t                PLAN      Plan was valid
-op/coretypes.t               PLAN      Plan was valid
+op/coretypes.t               COMPAT    cperl only
 op/crypt.t                   PLAN      Plan was valid
 op/current_sub.t             PLAN      Plan was valid
 op/dbm.t                     TESTS     Test results:
@@ -122,7 +122,7 @@ op/stash.t                   TESTS     Test results:
 op/state.t                   PLAN      Plan was valid
 op/sub_lval.t                TESTS     Test results:
 op/svleak.t                  COMPAT    This test uses XS::APItest, which we don't install during perl install?
-op/switch-cperl.t            PLAN      Plan was valid
+op/switch-cperl.t            COMPAT    cperl only
 op/symbolcache.t             PLAN      Plan was valid
 op/taint.t                   PLAN      Plan was valid
 op/threads-dirh.t            SKIP      threaded test
