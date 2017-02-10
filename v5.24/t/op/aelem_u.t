@@ -4,9 +4,10 @@
 BEGIN {
     chdir 't' if -d 't';
     require './test.pl';
+    eval { require coretypes }
+      or skip_all("no coretypes");
 }
 plan( tests => 22 );
-use coretypes;
 use cperl;
 use v5.22;
 

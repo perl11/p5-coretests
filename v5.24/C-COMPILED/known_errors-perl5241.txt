@@ -122,7 +122,7 @@ op/stash.t                   TESTS     Test results:
 op/state.t                   PLAN      Plan was valid
 op/sub_lval.t                TESTS     Test results:
 op/svleak.t                  COMPAT    This test uses XS::APItest, which we don't install during perl install?
-op/switch.t                  PLAN      Plan was valid
+op/switch-cperl.t            PLAN      Plan was valid
 op/symbolcache.t             PLAN      Plan was valid
 op/taint.t                   PLAN      Plan was valid
 op/threads-dirh.t            SKIP      threaded test

@@ -4,6 +4,8 @@ BEGIN {
     chdir 't' if -d 't';
     unshift @INC,  '../lib';
     require "./test.pl";
+    eval { require coretypes }
+      or skip_all("no coretypes");
 }
 
 use coretypes;

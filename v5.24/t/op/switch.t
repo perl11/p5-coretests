@@ -11,7 +11,7 @@ use warnings;
 no warnings 'experimental::smartmatch';
 use Config ();
 
-plan tests => 205;
+plan tests => 203;
 
 # The behaviour of the feature pragma should be tested by lib/feature.t
 # using the tests in t/lib/feature/*. This file tests the behaviour of
@@ -56,14 +56,16 @@ $_ = "outside";
 given("inside") { check_outside1() }
 sub check_outside1 { is($_, "inside", "\$_ is not lexically scoped") }
 
-{
+#{
     #no warnings 'experimental::lexical_topic';
-    my $_ = "outside";
-    given("inside") { check_outside2() }
-    sub check_outside2 {
-	is($_, "outside", "\$_ lexically scoped (lexical \$_)")
-    }
-}
+    #my $_ = "outside";
+    #$_ = "outside";
+    #given("inside") { check_outside2() }
+    # core bug, works with cperl only
+    #sub check_outside2 {
+	#is($_, "outside", "\$_ lexically scoped (lexical \$_)")
+    #}
+#}
 
 # Basic string/numeric comparisons and control flow
 
@@ -401,7 +403,7 @@ sub check_outside1 { is($_, "inside", "\$_ is not lexically scoped") }
 # Make sure it still works with a lexical $_:
 {
     #no warnings 'experimental::lexical_topic';
-    my $_;
+    #my $_;
     my $test = "explicit comparison with lexical \$_";
     my $twenty_five = 25;
     my $ok;
@@ -702,7 +704,7 @@ my $f = tie my $v, "FetchCounter";
 {
     my $first = 1;
     #no warnings 'experimental::lexical_topic';
-    my $_;
+    #my $_;
     for (1, "two") {
 	when ("two") {
 	    is($first, 0, "Implicitly lexical loop: second");
@@ -721,7 +723,7 @@ my $f = tie my $v, "FetchCounter";
 {
     my $first = 1;
     #no warnings 'experimental::lexical_topic';
-    my $_;
+    #my $_;
     for $_ (1, "two") {
 	when ("two") {
 	    is($first, 0, "Implicitly lexical, explicit \$_: second");
@@ -740,7 +742,7 @@ my $f = tie my $v, "FetchCounter";
 {
     my $first = 1;
     #no warnings 'experimental::lexical_topic';
-    for my $_ (1, "two") {
+    for (1, "two") {
 	when ("two") {
 	    is($first, 0, "Lexical loop: second");
 	    eval {break};
@@ -1373,12 +1375,13 @@ unreified_check(undef,"");
 
 sub f1 {
   #no warnings 'experimental::lexical_topic';
-  my $_;
+  #my $_;
   given(3) {
     return sub { $_ } # close over lexical $_
   }
 }
-is(f1()->(), 3, 'closed over $_');
+#only with cperl
+#is(f1()->(), 3, 'closed over $_');
 
 {
     package RT94682;
@@ -1387,7 +1390,8 @@ is(f1()->(), 3, 'closed over $_');
     sub DESTROY { $d++ };
 
     sub f2 {
-	my $_ = 5;
+        $_ = 5;
+	#my $_ = 5;
 	given(bless [7]) {
             local $::TODO = '';
 	    ::is($_->[0], 7, "is [7]");

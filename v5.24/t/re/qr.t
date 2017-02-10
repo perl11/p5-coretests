@@ -33,8 +33,9 @@ is(ref $rx, "Regexp", "qr// blessed into 'Regexp' by default");
 
  is $output, "5\n1: 5\n2: 5\n", '$a_match_var =~ /$qr/';
 }
-no warnings 'experimental::lexical_topic';
-for my $_($'){
+#no warnings 'experimental::lexical_topic';
+#for my $_($'){
+for ($'){
  my $output = '';
  my $rx = qr/o/;
  my $a = "ooaoaoao";
