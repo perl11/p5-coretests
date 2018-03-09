@@ -1,11 +1,12 @@
 #!./perl -w
 
 BEGIN {
-    chdir '..' if -d '../pod' && -d '../t';
-    unshift @INC,  'lib';
-    require './t/test.pl';
-    plan(29);
+  chdir '../t' if -d '../pod' && -d '../t';
+  chdir 't' if -d 't';
+  unshift @INC,  '../lib';
 }
+require './test.pl';
+plan(29);
 
 BEGIN {
     my $w;

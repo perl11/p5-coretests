@@ -22,7 +22,7 @@ my $failure_profiles = {
     'TESTS'  => "Tests don't pass at the moment",
     'SEQ'    => "Tests out of sequence",
     'TODO'   => "TODO test unexpectedly passing",
-    'COMPAT' => "Test isn't useful for B::C",
+    'COMPAT' => "B::C compat problem",
     'SKIP'   => "TODO test is skipped (broken?)",
     'CHECK'  => "Uncompile version passses perl -c",
     'EXIT'   => "Exit != 0",

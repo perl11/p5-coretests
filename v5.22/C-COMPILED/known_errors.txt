@@ -31,12 +31,14 @@
 ../lib/DB.t                  PLAN      Plan was valid
 ../lib/diagnostics.t         SIG       Exit signal is 11 SEGV
 ../lib/DirHandle.t           PLAN      Plan was valid
+../lib/dumpvar.t             PLAN      Plan was valid
 ../lib/English.t             SIG       Exit signal is 11 SEGV
 ../lib/FileHandle.t          PLAN      Plan was valid
 ../lib/filetest.t            PLAN      Plan was valid
 ../lib/integer.t             PLAN      Plan was valid
 ../lib/Internals.t           PLAN      Plan was valid
 ../lib/less.t                PLAN      Plan was valid
+../lib/open.t                PLAN      Plan was valid
 ../lib/overload.t            BC        ../lib/overload.c is generated (-O3,-fno-fold)
 ../lib/overload64.t          PLAN      Plan was valid
 ../lib/overloading.t         PLAN      Plan was valid
@@ -44,58 +46,82 @@
 ../lib/sort.t                PLAN      Plan was valid
 ../lib/Symbol.t              PLAN      Plan was valid
 ../lib/Thread.t              PLAN      Plan was valid
+../lib/utf8.t                PLAN      Plan was valid
 ../lib/vars_carp.t           TESTS     Test results:
 ../lib/vmsish.t              PLAN      Plan was valid
 ../lib/warnings.t            TESTS     Test results:
 base/lex.t                   PLAN      Plan was valid
 comp/final_line_num.t        COMPAT    This test is about BEGIN / file parse behavior so not relevant to B::C
+comp/fold.t                  PLAN      Plan was valid
 comp/hints.t                 COMPAT    tests are using BEGIN block, do not ready for B::C
+comp/opsubs.t                PLAN      Plan was valid
 comp/parser.t                COMPAT    We're not going to support ' as a package separator until we need to: https://github.com/rurban/perl-compiler/issues/217
-comp/require.t               TODO      No TODO tests passed
+comp/proto.t                 TESTS     Test results:
+comp/uproto.t                TESTS     Test results:
 io/bom.t                     PLAN      Plan was valid
 io/layers.t                  TESTS     Test results:
+io/open.t                    TESTS     Test results:
 mro/c3_with_overload.t       TESTS     overload stringify
 mro/c3_with_overload_utf8.t  TESTS     overload stringify
 mro/isarev.t                 TESTS     Failed tests: 16 18
 mro/isarev_utf8.t            TESTS     Failed tests: 16 18
-mro/next_edgecases_utf8.t    TESTS     Test results:
 mro/overload_c3.t            TESTS     overload stringify test 3 7
 mro/overload_c3_utf8.t       TESTS     overload stringify test 3 7
 mro/overload_dfs.t           TESTS     overload stringify test 3 7
 op/array_base.t              COMPAT    C issue #248 - deprecated array base feature - wont fix
 op/attrhand.t                PLAN      Plan was valid
+op/attrs.t                   TESTS     Test results:
 op/blocks.t                  COMPAT    check order of execution of special blocks ( BEGIN included )
-op/caller.t                  TESTS     Test results:
+op/caller.t                  PLAN      Plan was valid
 op/closure.t                 TESTS     Test results:
+op/const-optree.t            BC        op/const-optree.c is generated (-O3,-fno-fold)
+op/coreamp.t                 PLAN      Plan was valid
 op/coresubs.t                PLAN      Plan was valid
 op/dbm.t                     TESTS     Test results:
-op/eval.t                    TESTS     Test results:
+op/do.t                      PLAN      Plan was valid
+op/eval.t                    PLAN      Plan was valid
 op/exists_sub.t              SIG       TODO: No output. and issue GH #290
 op/filetest.t                PLAN      Plan was valid
+op/goto.t                    PLAN      Plan was valid
+op/gv.t                      PLAN      Plan was valid
 op/inccode-tie.t             SIG       Exit signal is 6 SIGABRT
 op/inccode.t                 SIG       Exit signal is 6 SIGABRT
+op/incfilter.t               PLAN      Plan was valid
+op/index.t                   PLAN      Plan was valid
+op/kvaslice.t                PLAN      Plan was valid
+op/kvhslice.t                PLAN      Plan was valid
 op/leaky-magic.t             TESTS     Test results:
 op/lex.t                     COMPAT    Tests trigger errors at compilation time (reported C issue #266 which is a small subset)
 op/lex_assign.t              PLAN      Plan was valid
 op/lexsub.t                  BC        B::SPECIAL::EGV
 op/lvref.t                   SIG       Exit signal is 6 SIGABRT
+op/magic-27839.t             BC        op/magic-27839.c is generated (-O3,-fno-fold)
+op/magic.t                   PLAN      Plan was valid
 op/method.t                  PLAN      Plan was valid
-op/mydef.t                   TODO      No TODO tests passed
+op/mkdir.t                   PLAN      Plan was valid
+op/mydef.t                   PLAN      Plan was valid
 op/override.t                COMPAT    crazy test which override CORE::GLOBAL::require @BEGIN
 op/pack.t                    SIG       Exit signal is 6 SIGABRT
+op/pos.t                     PLAN      Plan was valid
 op/postfixderef.t            TESTS     Tests 77-81 Scalar/Array/Hash/Code/Glob dereference
 op/protowarn.t               PLAN      TODO: no output.
 op/readdir.t                 TESTS     Test results:
 op/readline.t                TESTS     Test results:
 op/ref.t                     TESTS     Test results:
+op/signatures.t              TESTS     Test results:
+op/sort.t                    TESTS     Test results:
 op/sprintf.t                 TESTS     Test results:
 op/stash.t                   TESTS     Test results:
+op/sub.t                     BC        op/sub.c is generated (-O3,-fno-fold)
 op/sub_lval.t                TESTS     Test results:
 op/svleak.t                  COMPAT    This test uses XS::APItest, which we don't install during perl install?
+op/switch.t                  PLAN      Plan was valid
+op/symbolcache.t             PLAN      Plan was valid
 op/threads-dirh.t            SKIP      threaded test
 op/threads.t                 SKIP      threaded test
 op/tie_fetch_count.t         PLAN      Plan was valid
 op/universal.t               TESTS     Test results:
+op/utfhash.t                 PLAN      Plan was valid
 op/vec.t                     TESTS     Test results:
 op/warn.t                    TESTS     Test results:
 op/write.t                   SIG       Exit signal is 11 SEGV
@@ -103,24 +129,32 @@ op/yadayada.t                TESTS     Test results:
 opbasic/magic_phase.t        PLAN      Plan was valid
 re/fold_grind.t              SIG       Exit signal is 6 SIGABRT
 re/overload.t                TESTS     Failed tests:  1-3, 86. OL_MOD
+re/pat.t                     PLAN      Plan was valid
 re/pat_advanced.t            SIG       Exit signal is 6 SIGABRT
 re/pat_re_eval.t             PLAN      Eval-group not allowed at runtime
-re/pat_rt_report.t           TESTS     Test results:
+re/pat_rt_report.t           PLAN      Plan was valid
 re/qr_gc.t                   TESTS     Test results:
+re/reg_eval_scope.t          PLAN      Plan was valid
 re/reg_fold.t                SIG       Exit signal is 6 SIGABRT
 re/reg_mesg.t                TESTS     Test results:
 re/reg_pmod.t                TESTS     Failed test:  88
-re/rxcode.t                  TESTS     Failed tests:  18-20
+re/rxcode.t                  PLAN      Plan was valid
 re/subst_amp.t               TESTS     Failed tests:  2-13
+uni/attrs.t                  TESTS     Test results:
 uni/caller.t                 PLAN      TODO: Undefined subroutine &????::ok called
 uni/fold.t                   SIG       Exit signal is 6 SIGABRT
 uni/greek.t                  TESTS     Failed tests:  1-6, 9-12, 17-22, 25-28, 33-35, 37-39, 49-57, 59-61, 63-68
+uni/gv.t                     PLAN      Plan was valid
+uni/latin2.t                 TESTS     Test results:
 uni/lower.t                  SIG       Exit signal is 6 SIGABRT
 uni/method.t                 PLAN      C issue #254 - UNIVERSAL::can + eval
+uni/package.t                PLAN      Plan was valid
+uni/parser.t                 TESTS     Test results:
 uni/readline.t               TESTS     Failed test:  1
 uni/stash.t                  TESTS     Test results:
 uni/title.t                  SIG       Exit signal is 6 SIGABRT
 uni/upper.t                  SIG       Exit signal is 6 SIGABRT
+uni/variables.t              PLAN      Plan was valid
 xtestc/0015.t                TESTS     Output is: "a\nb\n\n"
 xtestc/0046.t                TESTS     Output is: ""
 xtestc/0125.t                TESTS     Output is: ""
