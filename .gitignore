@@ -2,8 +2,10 @@
 v5.*/C-COMPILED/xtestc/
 v5.*/t/*/*.c
 v5.*/t/*/*.bin
+v5.*/t/*/*.bin.dSYM/
 v5.*/lib/*.c
 v5.*/lib/*.bin
+v5.*/lib/*.bin.dSYM/
 v5.*/t/tmp*
 v5.*/t/*/*.subtest*
 v5.*/lib/*.subtest*
@@ -17,3 +19,4 @@ v5.14/t/Io_argv*
 v5.14/t/echo*
 v5.22/C-COMPILED/known_errors.*
 v5.*/t/Op_write.tmp
+v5.*/t/.perldb
