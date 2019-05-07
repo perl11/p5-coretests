@@ -35,7 +35,7 @@ $short_path = '../lib/' if $short_path eq 'lib/';
 $file_to_test = $short_path . $file_to_test;
 
 # The file that tracks acceptable failures in the compiled unit tests.
-my $known_errors_file = "known_errors.txt";
+my $known_errors_file = "known_errors" . ($^V =~ /c$/ ? "_cperl.txt" : ".txt");
 my $errors = KnownErrors->new( file_to_test => $file_to_test );
 
 # The relative path our symlinks will point to.
@@ -59,7 +59,7 @@ chdir "$FindBin::Bin/../../t" or die "Cannot chdir to t directory: $!";
 
 plan tests => 3 + 9 * scalar @optimizations;
 
-ok( !-z $file_to_test, "$file_to_test exists" );
+ok( !-z $file_to_test, "orig ../t/$file_to_test exists" );
 open( my $fh, '<', $file_to_test ) or die("Can't open $file_to_test");
 my $taint = <$fh>;
 close $fh;

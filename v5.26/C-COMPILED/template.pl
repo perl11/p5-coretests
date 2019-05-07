@@ -61,7 +61,7 @@ chdir "$FindBin::Bin/../../t" or die "Cannot chdir to t directory: $!";
 
 plan tests => 3 + 9 * scalar @optimizations;
 
-ok( !-z $file_to_test, "$file_to_test exists" );
+ok( !-z $file_to_test, "orig ../t/$file_to_test exists" );
 open( my $fh, '<', $file_to_test ) or die("Can't open $file_to_test");
 my $taint = <$fh>;
 close $fh;

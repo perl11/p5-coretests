@@ -55,6 +55,7 @@ comp/final_line_num.t        COMPAT    This test is about BEGIN / file parse beh
 comp/fold.t                  PLAN      Plan was valid
 comp/hints.t                 COMPAT    tests are using BEGIN block
 comp/opsubs.t                PLAN      Plan was valid
+comp/parser.t                SIG       Exit signal is 11 SEGV
 comp/proto.t                 TESTS     Test results:
 comp/uproto.t                TESTS     Test results:
 comp/use.t                   SIG       Exit signal is 11 SEGV
