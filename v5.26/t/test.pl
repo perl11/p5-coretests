@@ -106,9 +106,13 @@ sub is_miniperl {
     return !defined &DynaLoader::boot_DynaLoader;
 }
 
+sub is_cperl {
+    return $^V =~ /c$/;
+}
+
 sub set_up_inc {
     # Don’t clobber @INC under miniperl
-    @INC = () unless is_miniperl;
+    #unshift @INC,  () unless is_miniperl;
     unshift @INC, @_;
 }
 

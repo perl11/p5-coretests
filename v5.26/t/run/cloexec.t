@@ -34,7 +34,7 @@
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = '../lib';
+    unshift @INC, '../lib';
     require './test.pl';
     skip_all_without_config('d_fcntl');
 }

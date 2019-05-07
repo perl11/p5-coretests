@@ -31,7 +31,7 @@ my $failure_profiles = {
 sub new {
     my ( $class, %opts ) = @_;
 
-    my $known_errors_file = "known_errors.txt";
+    my $known_errors_file = "known_errors" . ($^V =~ /c$/ ? "_cperl.txt" : ".txt");
 
     $opts{error_file} ||= qq{$FindBin::Bin/../$known_errors_file};
     unless (-e $opts{error_file}) {
@@ -49,6 +49,7 @@ sub get_current_error_type {
 
     my ( $file_in_error, $type, $description ) = ('');
     my $file_to_test = $self->{file_to_test} or die "$! $self->{error_file_to_test}";
+    my $known_errors_file = "known_errors" . ($^V =~ /c$/ ? "_cperl.txt" : ".txt");
 
     open( my $errors_fh, '<', $self->{error_file} ) or die "$! $self->{error_file}";
     lock($errors_fh);
@@ -56,9 +57,9 @@ sub get_current_error_type {
         chomp $line;
         ( $file_in_error, $type, $description ) = split( ' ', $line, 3 );
         if ( $file_in_error && $file_in_error eq $file_to_test ) {
-            $type                      or die("$file_to_test found in known_errors_file but no 'type' was found on the line.");
+            $type                      or die("$file_to_test found in $known_errors_file but no 'type' was found on the line.");
             $failure_profiles->{$type} or die("Failure profile '$type' is unknown for test $file_to_test");
-            $description               or die("$file_to_test found in known_errors_file but no 'description' was found on the line.");
+            $description               or die("$file_to_test found in $known_errors_file but no 'description' was found on the line.");
             $self->{description}      = $description;
             $self->{todo_description} = $failure_profiles->{$type} . " - " . $description;
             last;
@@ -77,6 +78,7 @@ sub check_todo {
     $want_type ||= '';
 
     my $current_t_file = $self->{file_to_test} or die "No file_to_test";
+    my $known_errors_file = "known_errors" . ($^V =~ /c$/ ? "_cperl.txt" : ".txt");
 
     # is it the expected error
     my $todo = $self->get_current_error_type() eq $want_type ? $self->{todo_description} : undef;
@@ -88,7 +90,7 @@ sub check_todo {
         if ( !$v ) {
             if ( $self->{first_error} ) {
                 $self->{first_error} = 0;
-                note "Adding $current_t_file $want_type error to known_errors.txt file";
+                note "Adding $current_t_file $want_type error to $known_errors_file";
                 $self->update_known_errors( test => $current_t_file, add => [qq{$current_t_file\t$want_type\t$msg}] );
             }
         }
@@ -99,10 +101,10 @@ sub check_todo {
     else {
         #return subtest "TODO - $msg" => sub {
         if ( $v && !$known_error ) {
-            diag "TODO test is now passing, auto adjust known_errors.txt file";
+            diag "TODO test is now passing, auto adjust $known_errors_file";
             $TODO = $todo;
             # removing test from file
-            diag "Removing test $current_t_file from known_errors.txt";
+            diag "Removing test $current_t_file from $known_errors_file";
             $self->update_known_errors( test => $current_t_file ) if $self->{first_error};
             return ok($v, $msg);
         }

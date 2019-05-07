@@ -26,11 +26,12 @@
 ../lib/AnyDBM_File.t         PLAN      Plan was valid
 ../lib/Benchmark.t           PLAN      Plan was valid
 ../lib/blib.t                PLAN      Plan was valid
-../lib/charnames.t           EXIT      Exit code is 2
+../lib/charnames.t           SIG       Exit signal is 6 SIGABRT
 ../lib/Config.t              PLAN      Plan was valid
 ../lib/DB.t                  PLAN      Plan was valid
 ../lib/diagnostics.t         PLAN      Plan was valid
 ../lib/DirHandle.t           PLAN      Plan was valid
+../lib/dumpvar.t             PLAN      Plan was valid
 ../lib/English.t             SIG       Exit signal is 11 SEGV
 ../lib/fake_signatures.t     PLAN      Plan was valid
 ../lib/FileHandle.t          PLAN      Plan was valid
@@ -39,7 +40,6 @@
 ../lib/Internals.t           PLAN      Plan was valid
 ../lib/less.t                PLAN      Plan was valid
 ../lib/locale.t              TESTS     Test results:
-../lib/open.t                PLAN      Plan was valid
 ../lib/overload.t            BC        ../lib/overload.c is generated (-O3,-fno-fold)
 ../lib/overload64.t          PLAN      Plan was valid
 ../lib/overloading.t         PLAN      Plan was valid
@@ -47,19 +47,18 @@
 ../lib/sort.t                PLAN      Plan was valid
 ../lib/Symbol.t              PLAN      Plan was valid
 ../lib/Thread.t              PLAN      Plan was valid
-../lib/utf8.t                PLAN      Plan was valid
 ../lib/vars_carp.t           TESTS     Test results:
 ../lib/vmsish.t              PLAN      Plan was valid
+../lib/warnings.t            TESTS     Test results:
 base/lex.t                   PLAN      Plan was valid
 comp/final_line_num.t        COMPAT    This test is about BEGIN / file parse behavior so not relevant to B::C
-comp/fold.t                  PLAN      Plan was valid
 comp/hints.t                 COMPAT    tests are using BEGIN block, do not ready for B::C
-comp/opsubs.t                PLAN      Plan was valid
 comp/parser.t                COMPAT    We're not going to support ' as a package separator until we need to: https://github.com/rurban/perl-compiler/issues/217
 comp/proto.t                 TESTS     Test results:
-comp/uproto.t                TESTS     Test results:
+comp/require.t               PLAN      Plan was valid
+comp/uproto.t                PLAN      Plan was valid
 io/layers.t                  TESTS     Test results:
-io/perlio.t                  TODO      No TODO tests passed
+io/open.t                    TESTS     Test results:
 io/perlio_fail.t             PLAN      Plan was valid
 io/pipe.t                    PLAN      Plan was valid
 mro/c3_with_overload.t       TESTS     overload stringify
@@ -72,91 +71,108 @@ mro/overload_dfs.t           TESTS     Test results:
 op/aelem_u.t                 COMPAT    cperl only
 op/array_base.t              COMPAT    C issue #248 - deprecated array base feature - wont fix
 op/attrhand.t                PLAN      Plan was valid
-op/attrproto.t               PLAN      Plan was valid
 op/attrs.t                   TESTS     Test results:
+op/bless.t                   TESTS     Test results:
 op/blocks.t                  COMPAT    check order of execution of special blocks ( BEGIN included )
 op/caller.t                  PLAN      Plan was valid
 op/chdir.t                   PLAN      Plan was valid
 op/closure.t                 TESTS     Test results:
-op/const-optree.t            BC        op/const-optree.c is generated (-O3,-fno-fold)
+op/const-optree.t            PLAN      Plan was valid
 op/coreamp.t                 PLAN      Plan was valid
 op/coresubs.t                PLAN      Plan was valid
 op/coretypes.t               COMPAT    cperl only
 op/crypt.t                   PLAN      Plan was valid
 op/current_sub.t             PLAN      Plan was valid
 op/dbm.t                     TESTS     Test results:
-op/defins.t                  TESTS     Test results:
 op/die_keeperr.t             PLAN      Plan was valid
 op/do.t                      PLAN      Plan was valid
-op/eval.t                    PLAN      Plan was valid
+op/exec.t                    PLAN      Plan was valid
 op/exists_sub.t              SIG       Exit signal is 11 SEGV
 op/getpid.t                  PLAN      Plan was valid
 op/getppid.t                 PLAN      Plan was valid
-op/goto.t                    PLAN      Plan was valid
 op/goto_xs.t                 PLAN      Plan was valid
-op/gv.t                      PLAN      Plan was valid
+op/gv.t                      TESTS     Test results:
 op/hashwarn.t                TESTS     Test results:
-op/incfilter.t               PLAN      Plan was valid
-op/index.t                   PLAN      Plan was valid
-op/kvaslice.t                PLAN      Plan was valid
-op/kvhslice.t                PLAN      Plan was valid
+op/inccode-tie.t             SIG       Exit signal is 6 SIGABRT
+op/kvaslice.t                TESTS     Test results:
+op/kvhslice.t                TESTS     Test results:
 op/leaky-magic.t             TESTS     Test results:
 op/lex.t                     COMPAT    Tests trigger errors at compilation time (reported C issue #266 which is a small subset)
 op/lex_assign.t              PLAN      Plan was valid
 op/lexsub.t                  BC        B::SPECIAL::EGV
+op/lop.t                     TESTS     Test results:
 op/lvref.t                   SIG       Exit signal is 6 SIGABRT
-op/magic-27839.t             BC        op/magic-27839.c is generated (-O3,-fno-fold)
+op/magic-27839.t             PLAN      Plan was valid
 op/magic.t                   SIG       Exit signal is 13 SIGPIPE
 op/method.t                  PLAN      Plan was valid
 op/mkdir.t                   PLAN      Plan was valid
 op/mydef.t                   PLAN      Plan was valid
 op/override.t                COMPAT    crazy test which override CORE::GLOBAL::require @BEGIN
-op/pos.t                     PLAN      Plan was valid
+op/pack.t                    SIG       Exit signal is 6 SIGABRT
 op/postfixderef.t            TESTS     Test results:
 op/protowarn.t               PLAN      Plan was valid
 op/readline.t                TESTS     Test results:
 op/recurse.t                 PLAN      Plan was valid
-op/sort.t                    TESTS     Test results:
+op/ref.t                     SIG       Exit signal is 11 SEGV
+op/require_errors.t          SIG       Exit signal is 11 SEGV
+op/reverse.t                 PLAN      Plan was valid
+op/signatures.t              PLAN      Plan was valid
+op/split_unicode.t           SIG       Exit signal is 6 SIGABRT
 op/stash.t                   TESTS     Test results:
-op/sub.t                     BC        op/sub.c is generated (-O3,-fno-fold)
+op/state.t                   PLAN      Plan was valid
 op/sub_lval.t                TESTS     Test results:
 op/svleak.t                  COMPAT    This test uses XS::APItest, which we don't install during perl install?
 op/switch-cperl.t            COMPAT    cperl only
-op/switch.t                  PLAN      Plan was valid
 op/symbolcache.t             PLAN      Plan was valid
+op/taint.t                   PLAN      Plan was valid
 op/threads-dirh.t            SKIP      threaded test
 op/threads.t                 SKIP      threaded test
+op/tie.t                     TESTS     Test results:
 op/tie_fetch_count.t         PLAN      Plan was valid
 op/universal.t               TESTS     Test results:
 op/utfhash.t                 PLAN      Plan was valid
 op/vec.t                     TESTS     Test results:
+op/write.t                   SIG       Exit signal is 11 SEGV
+op/yadayada.t                TESTS     Test results:
+opbasic/arith.t              TESTS     Test results:
+opbasic/magic_phase.t        PLAN      Plan was valid
+re/fold_grind.t              SIG       Exit signal is 6 SIGABRT
+re/overload.t                TESTS     Test results:
+re/pat.t                     PLAN      Plan was valid
+re/pat_advanced.t            SIG       Exit signal is 11 SEGV
+re/pat_re_eval.t             PLAN      Plan was valid
+re/pat_rt_report.t           SIG       Exit signal is 11 SEGV
+re/qr-72922.t                PLAN      Plan was valid
+re/qr.t                      PLAN      Plan was valid
+re/qr_gc.t                   TESTS     Test results:
 re/reg_eval_scope.t          PLAN      Plan was valid
+re/reg_fold.t                SIG       Exit signal is 6 SIGABRT
 re/reg_mesg.t                TESTS     Test results:
 re/reg_pmod.t                TESTS     Test results:
-re/rxcode.t                  PLAN      Plan was valid
+re/regex_sets_compat.t       TESTS     Test results:
+re/regexp.t                  TESTS     Test results:
+re/regexp_notrie.t           TESTS     Test results:
+re/regexp_qr.t               TESTS     Test results:
+re/regexp_trielist.t         TESTS     Test results:
+re/rxcode.t                  TESTS     Test results:
 re/speed.t                   TESTS     Test results:
 re/subst_amp.t               TESTS     Test results:
 re/uniprops.t                PLAN      Plan was valid
-uni/attrs.t                  TESTS     Test results:
 uni/caller.t                 PLAN      Plan was valid
+uni/fold.t                   SIG       Exit signal is 6 SIGABRT
 uni/greek.t                  TESTS     Failed tests:  1-6, 9-12, 17-22, 25-28, 33-35, 37-39, 49-57, 59-61, 63-68
-uni/gv.t                     PLAN      Plan was valid
 uni/keywords.t               TESTS     Failed test: 15 - throws error without utf8
 uni/latin2.t                 TESTS     Failed tests:  3-6, 13-16, 19-22, 29-32, 35, 39, 73-80
+uni/lower.t                  SIG       Exit signal is 6 SIGABRT
 uni/method.t                 PLAN      Plan was valid
-uni/package.t                PLAN      Plan was valid
+uni/opcroak.t                TESTS     Test results:
 uni/parser.t                 TESTS     Test results:
 uni/readline.t               TESTS     Test results:
 uni/stash.t                  TESTS     Test results:
-uni/universal.t              TESTS     Test results:
-uni/variables.t              PLAN      Plan was valid
-uni/write.t                  TESTS     Test results:
+uni/title.t                  SIG       Exit signal is 6 SIGABRT
+uni/upper.t                  SIG       Exit signal is 6 SIGABRT
 xtestc/0015.t                TESTS     Output is: "a\nb\n\n"
-xtestc/0028.t                TESTS     Output is: "Can t locate ccode28 ..."
 xtestc/0046.t                TESTS     Output is: ""
-xtestc/0081.t                TESTS     Output is: ""
-xtestc/0091.t                TESTS     Output is: "Constant subroutine INADDR ..."
-xtestc/0095.t                TESTS     Output is: "Constant subroutine INADDR ..."
 xtestc/0135.t                TESTS     Output is: ""
 xtestc/0146.t                TESTS     Output is: "Use of strings with code ..."
 xtestc/0163.t                TESTS     Output is: ""
@@ -169,9 +185,7 @@ xtestc/0178.t                TESTS     Output is: ""
 xtestc/0179.t                TESTS     Output is: "Smartmatch is experimental at ..."
 xtestc/0182.t                TESTS     Output is: "main::foo"
 xtestc/0191.t                TESTS     Output is: "bad\n"
-xtestc/0194.t                TESTS     Output is: " 6096 s004 S 0:00.01 ccdave ..."
 xtestc/0196.t                TESTS     Output is: "m: Modification of a read ..."
-xtestc/0201.t                TESTS     Output is: "Prototype mismatch: sub ..."
 xtestc/0207.t                TESTS     Output is: ""
 xtestc/0222.t                TESTS     Output is: "Can t find string terminator ..."
 xtestc/0226.t                TESTS     Output is: ""
@@ -190,7 +204,6 @@ xtestc/0276.t                TESTS     Output is: ""
 xtestc/0277.t                TESTS     Output is: ""
 xtestc/0278.t                TESTS     Output is: ""
 xtestc/0281.t                TESTS     Output is: ""
-xtestc/0291.t                TESTS     Output is: "Constant subroutine INADDR ..."
 xtestc/0293.t                TESTS     Output is: ""
 xtestc/0295.t                TESTS     Output is: ""
 xtestc/0299.t                TESTS     Output is: ""
@@ -201,28 +214,22 @@ xtestc/0317.t                TESTS     Output is: "Can t locate object method kt
 xtestc/0319.t                TESTS     Output is: "Wide character in print at ..."
 xtestc/0329.t                TESTS     Output is: "axxxx \n"
 xtestc/0335.t                TESTS     Output is: "1.4142135623731"
-xtestc/0342.t                TESTS     Output is: "Constant subroutine INADDR ..."
-xtestc/0350.t                TESTS     Output is: ""
 xtestc/0368.t                TESTS     Output is: ""
 xtestc/0369.t                TESTS     Output is: ""
 xtestc/0371.t                TESTS     Output is: ""
 xtestc/1942.t                TESTS     Output is: " PID RSS VSZ MEM TT STAT TIME ..."
 xtestc/1960.t                TESTS     Output is: ""
 xtestc/2052.t                TESTS     Output is: ""
-xtestc/2193.t                TESTS     Output is: "Bareword found where operator ..."
 xtestc/2201.t                TESTS     Output is: ""
 xtestc/2381.t                TESTS     Output is: "Undefined subroutine ..."
-xtestc/2460.t                TESTS     Output is: "Not enough arguments for ..."
 xtestc/2511.t                TESTS     Output is: ""
 xtestc/2520.t                TESTS     Output is: "0100"
 xtestc/2530.t                TESTS     Output is: "Can t locate t TestBC.pm in ..."
 xtestc/2540.t                TESTS     Output is: ""
+xtestc/2731.t                TESTS     Output is: "..."
 xtestc/2741.t                TESTS     Output is: "SV = PVHV(0x100a9b540) at ..."
 xtestc/2900.t                TESTS     Output is: "19518210 "
 xtestc/2901.t                TESTS     Output is: ""
 xtestc/2990.t                TESTS     Output is: ""
-xtestc/3052.t                TESTS     Output is: "Constant subroutine INADDR ..."
-xtestc/3060.t                TESTS     Output is: "..."
-xtestc/3170.t                TESTS     Output is: "Constant subroutine INADDR ..."
 xtestc/3200.t                TESTS     Output is: ""
 xtestc/3300.t                TESTS     Output is: "Can t locate object method ..."

@@ -4,7 +4,7 @@ BEGIN {
   if (-f '../TestInit.pm') {
     chdir '..';
   }
-  @INC = ('lib', '.');
+  unshift @INC, ('lib', '.');
 }
 
 use warnings;

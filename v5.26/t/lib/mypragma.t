@@ -3,7 +3,7 @@
 BEGIN {
     chdir 't' if -d 't';
     require './test.pl';
-    @INC = qw(lib ../lib);
+    unshift @INC, qw(lib ../lib);
     plan(tests => 14);
 }
 

@@ -6,7 +6,7 @@
 BEGIN {
     chdir 't';
     require './test.pl';
-    @INC = ('.', '../lib');
+    unshift @INC, ('.', '../lib');
 }
 
 use warnings;

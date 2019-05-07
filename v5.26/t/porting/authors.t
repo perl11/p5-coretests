@@ -3,9 +3,9 @@
 
 BEGIN {
   if (-f '../TestInit.pm') {
-    @INC = '..';
+    unshift @INC, '..';
   } else {
-    @INC = '.';
+    unshift @INC, '.';
   }
 }
 use TestInit qw(T); # T is chdir to the top level

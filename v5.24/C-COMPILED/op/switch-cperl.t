@@ -14,7 +14,7 @@ BEGIN {
   use FindBin;
   # t/CORE/v5.22/C-COMPILED/op/bla.t => t/CORE/lib
   unshift @INC, $FindBin::Bin . "/../../../lib";
-  warnings->unimport('types') if $Config{usecperl};
+  warnings->unimport('types') if $^V =~ /c$/;
 }
 
 use KnownErrors qw/check_todo/;
@@ -37,7 +37,7 @@ $short_path = '../lib/' if $short_path eq 'lib/';
 $file_to_test = $short_path . $file_to_test;
 
 # The file that tracks acceptable failures in the compiled unit tests.
-my $known_errors_file = "known_errors.txt";
+my $known_errors_file = "known_errors" . ($^V =~ /c$/ ? "_cperl.txt" : ".txt");
 my $errors = KnownErrors->new( file_to_test => $file_to_test );
 
 # The relative path our symlinks will point to.

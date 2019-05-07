@@ -5,7 +5,7 @@
 # Note that this should still be runnable under miniperl.
 
 BEGIN {
-    @INC = qw(. ../lib );
+    unshift @INC, qw(. ../lib );
     chdir 't' if -d 't';
 }
 

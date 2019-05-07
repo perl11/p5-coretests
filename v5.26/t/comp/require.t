@@ -3,7 +3,7 @@
 my %origINC;
 BEGIN {
     chdir 't' if -d 't';
-    @INC = '.';
+    unshift @INC, '.';
     push @INC, '../lib', '../ext/re';
     %origINC = %INC;
 }

@@ -13,7 +13,7 @@ $| = 1;
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = ('../lib');
+    unshift @INC, ('../lib');
     require './test.pl';
     skip_all_if_miniperl("miniperl: List::Util XS needed");
     skip_all("PERL_NO_COW") if $Config::Config{ccflags} =~ /PERL_NO_COW/;

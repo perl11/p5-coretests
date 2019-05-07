@@ -27,7 +27,7 @@
 BEGIN {
     chdir '..'
       unless -f 't/TEST' && -f 'MANIFEST' && -d 'lib' && -d 'ext';
-    @INC = ('.');
+    unshift @INC, ('.');
 }
 use TestInit 'T';
 use Config;

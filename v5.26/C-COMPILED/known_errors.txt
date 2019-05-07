@@ -23,52 +23,56 @@
 # - Fields are white space delimited. It's assumed $test and $type will have no spaces in them.
 #
 
+#comp/parser.t                COMPAT    We're not going to support ' as a package separator until we need to: https://github.com/rurban/perl-compiler/issues/217
 ../lib/AnyDBM_File.t         BC        ../lib/AnyDBM_File.c is generated (-O3,-fno-fold)
-../lib/Benchmark.t           PLAN      Plan was valid
-../lib/blib.t                PLAN      Plan was valid
+../lib/Benchmark.t           BC        ../lib/Benchmark.c is generated (-O3,-fno-fold)
+../lib/blib.t                BC        ../lib/blib.c is generated (-O3,-fno-fold)
+../lib/bytes.t               BC        ../lib/bytes.c is generated (-O3,-fno-fold)
 ../lib/Config.t              PLAN      Plan was valid
 ../lib/DB.t                  BC        ../lib/DB.c is generated (-O3,-fno-fold)
-../lib/diagnostics.t         PLAN      Plan was valid
+../lib/diagnostics.t         BC        ../lib/diagnostics.c is generated (-O3,-fno-fold)
 ../lib/DirHandle.t           BC        ../lib/DirHandle.c is generated (-O3,-fno-fold)
-../lib/dumpvar.t             PLAN      Plan was valid
+../lib/dumpvar.t             BC        ../lib/dumpvar.c is generated (-O3,-fno-fold)
 ../lib/English.t             BC        ../lib/English.c is generated (-O3,-fno-fold)
-../lib/FileHandle.t          PLAN      Plan was valid
-../lib/filetest.t            PLAN      Plan was valid
-../lib/integer.t             PLAN      Plan was valid
+../lib/fake_signatures.t     BC        ../lib/fake_signatures.c is generated (-O3,-fno-fold)
+../lib/feature.t             PLAN      Plan was valid
+../lib/FileHandle.t          BC        ../lib/FileHandle.c is generated (-O3,-fno-fold)
+../lib/filetest.t            BC        ../lib/filetest.c is generated (-O3,-fno-fold)
+../lib/FindBin.t             BC        ../lib/FindBin.c is generated (-O3,-fno-fold)
+../lib/h2ph.t                BC        ../lib/h2ph.c is generated (-O3,-fno-fold)
+../lib/h2xs.t                BC        ../lib/h2xs.c is generated (-O3,-fno-fold)
+../lib/integer.t             BC        ../lib/integer.c is generated (-O3,-fno-fold)
 ../lib/Internals.t           PLAN      Plan was valid
 ../lib/less.t                PLAN      Plan was valid
-../lib/locale.t              TESTS     Test results:
-../lib/open.t                PLAN      Plan was valid
+../lib/locale.t              BC        ../lib/locale.c is generated (-O3,-fno-fold)
+../lib/meta_notation.t       BC        ../lib/meta_notation.c is generated (-O3,-fno-fold)
+../lib/open.t                BC        ../lib/open.c is generated (-O3,-fno-fold)
 ../lib/overload.t            BC        ../lib/overload.c is generated (-O3,-fno-fold)
-../lib/overload64.t          PLAN      Plan was valid
+../lib/overload64.t          BC        ../lib/overload64.c is generated (-O3,-fno-fold)
 ../lib/overloading.t         PLAN      Plan was valid
-../lib/perl5db.t             TESTS     Test results:
+../lib/perl5db.t             BC        ../lib/perl5db.c is generated (-O3,-fno-fold)
+../lib/SelectSaver.t         BC        ../lib/SelectSaver.c is generated (-O3,-fno-fold)
+../lib/sigtrap.t             BC        ../lib/sigtrap.c is generated (-O3,-fno-fold)
 ../lib/sort.t                PLAN      Plan was valid
-../lib/Symbol.t              PLAN      Plan was valid
-../lib/Thread.t              PLAN      Plan was valid
+../lib/Symbol.t              BC        ../lib/Symbol.c is generated (-O3,-fno-fold)
+../lib/Thread.t              BC        ../lib/Thread.c is generated (-O3,-fno-fold)
 ../lib/utf8.t                PLAN      Plan was valid
 ../lib/vars_carp.t           TESTS     Test results:
 ../lib/vmsish.t              PLAN      Plan was valid
 base/lex.t                   PLAN      Plan was valid
-comp/bproto.t                BC        comp/bproto.c is generated (-O3,-fno-fold)
 comp/final_line_num.t        COMPAT    This test is about BEGIN / file parse behavior so not relevant to B::C
 comp/fold.t                  PLAN      Plan was valid
-comp/hints.t                 COMPAT    tests are using BEGIN block, do not ready for B::C
+comp/hints.t                 COMPAT    tests are using BEGIN block
 comp/opsubs.t                PLAN      Plan was valid
-comp/parser.t                COMPAT    We're not going to support ' as a package separator until we need to: https://github.com/rurban/perl-compiler/issues/217
-comp/proto.t                 BC        comp/proto.c is generated (-O3,-fno-fold)
-comp/require.t               BC        comp/require.c is generated (-O3,-fno-fold)
+comp/parser.t                SIG       Exit signal is 11 SEGV
 comp/uproto.t                TESTS     Test results:
-comp/use.t                   BC        comp/use.c is generated (-O3,-fno-fold)
-io/argv.t                    BC        io/argv.c is generated (-O3,-fno-fold)
-io/binmode.t                 BC        io/binmode.c is generated (-O3,-fno-fold)
-io/bom.t                     BC        io/bom.c is generated (-O3,-fno-fold)
+comp/use.t                   SIG       Exit signal is 11 SEGV
 io/closepid.t                BC        io/closepid.c is generated (-O3,-fno-fold)
 io/crlf.t                    BC        io/crlf.c is generated (-O3,-fno-fold)
-io/crlf_through.t            BC        io/crlf_through.c is generated (-O3,-fno-fold)
 io/data.t                    BC        io/data.c is generated (-O3,-fno-fold)
 io/defout.t                  BC        io/defout.c is generated (-O3,-fno-fold)
 io/dup.t                     BC        io/dup.c is generated (-O3,-fno-fold)
+io/eintr.t                   BC        io/eintr.c is generated (-O3,-fno-fold)
 io/eintr_print.t             BC        io/eintr_print.c is generated (-O3,-fno-fold)
 io/errnosig.t                BC        io/errnosig.c is generated (-O3,-fno-fold)
 io/fflush.t                  BC        io/fflush.c is generated (-O3,-fno-fold)
@@ -87,6 +91,7 @@ io/print.t                   BC        io/print.c is generated (-O3,-fno-fold)
 io/pvbm.t                    BC        io/pvbm.c is generated (-O3,-fno-fold)
 io/read.t                    BC        io/read.c is generated (-O3,-fno-fold)
 io/say.t                     BC        io/say.c is generated (-O3,-fno-fold)
+io/tell.t                    BC        io/tell.c is generated (-O3,-fno-fold)
 io/through.t                 BC        io/through.c is generated (-O3,-fno-fold)
 io/utf8.t                    BC        io/utf8.c is generated (-O3,-fno-fold)
 mro/c3_with_overload.t       TESTS     overload stringify

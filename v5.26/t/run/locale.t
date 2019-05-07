@@ -1,7 +1,7 @@
 #!./perl
 BEGIN {
     chdir 't' if -d 't';
-    @INC = '../lib';
+    unshift @INC, '../lib';
     require './test.pl';    # for fresh_perl_is() etc
     require './loc_tools.pl'; # to find locales
 }

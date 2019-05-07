@@ -10,7 +10,7 @@ use utf8;
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = ('../lib','.','../ext/re');
+    unshift @INC, ('../lib','.','../ext/re');
     require Config; import Config;
     require './test.pl';
     skip_all('no re module') unless defined &DynaLoader::boot_DynaLoader;

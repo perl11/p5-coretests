@@ -197,7 +197,7 @@ is( $ret, 'abc', 'do "abc.pl" sees return value' );
     my $got;
     #local @INC; # local fails on tied @INC
     my @old_INC = @INC; # because local doesn't work on tied arrays
-    @INC =  ('lib', 'lib/Devel', sub { $got = $_[1]; return undef; });
+    unshift @INC,  ('lib', 'lib/Devel', sub { $got = $_[1]; return undef; });
     foreach my $filename ('/test_require.pm', './test_require.pm',
 			  '../test_require.pm') {
 	local %INC;
@@ -215,7 +215,7 @@ is( $ret, 'abc', 'do "abc.pl" sees return value' );
     eval { require 'test_require.pm'; };
     is($got, undef, 'the directory is scanned for test_require.pm');
     is($test_require::loaded, 1, 'the module is loaded');
-    @INC = @old_INC;
+    unshift @INC, @old_INC;
 }
 
 # this will segfault if it fails
@@ -274,7 +274,7 @@ sub fake_module {
 }
 {
     local @INC = @INC;
-    @INC = (\&fake_module)x2;
+    unshift @INC, (\&fake_module)x2;
     eval { require "${\'bralbalhablah'}" };
     like $@, qr/^Can't locate/,
         'require PADTMP passing freed var when @INC has multiple subs';

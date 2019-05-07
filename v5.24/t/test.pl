@@ -107,12 +107,12 @@ sub is_miniperl {
 }
 
 sub is_cperl {
-    return defined &strict::bits and $strict::VERSION =~ /c$/;
+    return $^V =~ /c$/;
 }
 
 sub set_up_inc {
     # Don’t clobber @INC under miniperl
-    unshift @INC,  () unless is_miniperl;
+    #unshift @INC,  () unless is_miniperl;
     unshift @INC, @_;
 }
 

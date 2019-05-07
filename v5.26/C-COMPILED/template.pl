@@ -12,9 +12,9 @@ use Config;
 
 BEGIN {
   use FindBin;
-  # t/CORE/v5.22/C-COMPILED/op/bla.t => t/CORE/lib
-  unshift @INC, $FindBin::Bin . "/../../../lib";
-  warnings->unimport('types') if $Config{usecperl};
+  # t/CORE/v5.26/C-COMPILED/op/bla.t => t/CORE/lib
+  unshift @INC, ".", $FindBin::Bin . "/../../../lib";
+  warnings->unimport('types') if $^V =~ /c$/;
 }
 
 use KnownErrors qw/check_todo/;
@@ -37,7 +37,7 @@ $short_path = '../lib/' if $short_path eq 'lib/';
 $file_to_test = $short_path . $file_to_test;
 
 # The file that tracks acceptable failures in the compiled unit tests.
-my $known_errors_file = "known_errors.txt";
+my $known_errors_file = "known_errors" . ($^V =~ /c$/ ? "_cperl.txt" : ".txt");
 my $errors = KnownErrors->new( file_to_test => $file_to_test );
 
 # The relative path our symlinks will point to.
@@ -73,11 +73,11 @@ pass( $taint ? "Taint mode!" : "Not in taint mode" );
 unlink $bin_file, $c_file;
 
 my $PERL = $^X =~ m/\s/ ? qq{"$^X"} : $^X;
-# cwd is t/CORE/v5.22/t
+# cwd is t/CORE/v5.26/t
 my $blib = ( grep { m{blib/} } @INC ) ? '-I../../../../blib/arch -I../../../../blib/lib' : '';
 
-my $check = `$PERL -c $taint '$file_to_test' 2>&1`;
-like( $check, qr/syntax OK/, "$PERL -c $taint $file_to_test" );
+my $check = `$PERL -c $taint -I. '$file_to_test' 2>&1`;
+like( $check, qr/syntax OK/, "$PERL -c $taint -I. $file_to_test" );
 
 $ENV{HARNESS_NOTTY} = 1;
 

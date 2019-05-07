@@ -1633,9 +1633,9 @@ EOP
     {   # make sure we get an error when \p{} cannot load Unicode tables
         fresh_perl_like(<<'        prog that cannot load uni tables',
             BEGIN {
-                @INC = '../lib';
+                unshift @INC, '../lib';
                 require utf8; require 'utf8_heavy.pl';
-                @INC = ();
+                unshift @INC, ();
             }
             $name = 'A B';
             if ($name =~ /(\p{IsUpper}) (\p{IsUpper})/){

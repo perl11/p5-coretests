@@ -60,7 +60,7 @@ my $prog =    q~
      BEGIN {
          unless (-d 'blib') {
              chdir 't' if -d 't';
-             @INC = '../lib';
+             unshift @INC, '../lib';
          }
      }
      use utf8 qw( Hangul Gurmukhi Cham Cyrillic Canadian_Aboriginal Kannada
@@ -123,7 +123,7 @@ for(
      BEGIN {
          unless (-d 'blib') {
              chdir 't' if -d 't';
-             @INC = '../lib';
+             unshift @INC, '../lib';
          }
      }
      use utf8 qw( Hangul Gurmukhi Cham Cyrillic Canadian_Aboriginal Kannada
@@ -189,7 +189,7 @@ for(
      BEGIN {
          unless (-d 'blib') {
              chdir 't' if -d 't';
-             @INC = '../lib';
+             unshift @INC, '../lib';
          }
       }
       use utf8 qw( Cyrillic Hangul Thai Devanagari Bopomofo );
@@ -225,7 +225,7 @@ for(
       BEGIN {
          unless (-d 'blib') {
              chdir 't' if -d 't';
-             @INC = '../lib';
+             unshift @INC, '../lib';
          }
       }
       use utf8 qw( Cyrillic Hangul Thai Devanagari Bopomofo );
@@ -309,7 +309,7 @@ my $prog =    q~#!perl -w
      BEGIN {
          unless (-d 'blib') {
              chdir 't' if -d 't';
-             @INC = '../lib';
+             unshift @INC, '../lib';
          }
      }
      use utf8 qw( Hangul Canadian_Aboriginal Ethiopic Runic Katakana Kannada Ogham

@@ -7,7 +7,7 @@
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = '../lib';
+    unshift @INC, '../lib';
     require './test.pl';
     skip_all($^O) if $^O ne 'MSWin32';
     require Config; import Config;
