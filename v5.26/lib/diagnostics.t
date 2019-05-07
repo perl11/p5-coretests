@@ -1,8 +1,8 @@
 #!./perl -w
 
 BEGIN {
-    chdir '..' if -d '../pod' && -d '../t';
-    @INC = 'lib';
+    chdir '..' if -d '../regen' && -d '../t';
+    unshift @INC,  'lib';
     require './t/test.pl';
     plan(31);
 }

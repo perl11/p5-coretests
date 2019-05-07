@@ -1,7 +1,7 @@
 #!./perl -w
 
 BEGIN {
-    chdir '..' if -d '../pod' && -d '../t';
+    chdir '..' if -d '../regen' && -d '../t';
     unshift @INC,  'lib';
     require 'test.pl';
     plan(29);

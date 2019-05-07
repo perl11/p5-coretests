@@ -27,11 +27,12 @@
 ../lib/AnyDBM_File.t         PLAN      Plan was valid
 ../lib/Benchmark.t           PLAN      Plan was valid
 ../lib/blib.t                PLAN      Plan was valid
+../lib/charnames.t           EXIT      Exit code is 2
 ../lib/Config.t              PLAN      Plan was valid
 ../lib/DB.t                  PLAN      Plan was valid
-../lib/diagnostics.t         PLAN      Plan was valid
+../lib/diagnostics.t         BC        ../lib/diagnostics.c is generated (-O3,-fno-fold)
 ../lib/DirHandle.t           PLAN      Plan was valid
-../lib/dumpvar.t             PLAN      Plan was valid
+../lib/dumpvar.t             SIG       Exit signal is 11 SEGV
 ../lib/English.t             SIG       Exit signal is 11 SEGV
 ../lib/FileHandle.t          PLAN      Plan was valid
 ../lib/filetest.t            PLAN      Plan was valid
@@ -48,8 +49,10 @@
 ../lib/Symbol.t              PLAN      Plan was valid
 ../lib/Thread.t              PLAN      Plan was valid
 ../lib/utf8.t                PLAN      Plan was valid
+../lib/vars.t                SIG       Exit signal is 11 SEGV
 ../lib/vars_carp.t           TESTS     Test results:
 ../lib/vmsish.t              PLAN      Plan was valid
+../lib/warnings.t            TESTS     Test results:
 base/lex.t                   PLAN      Plan was valid
 comp/final_line_num.t        COMPAT    This test is about BEGIN / file parse behavior so not relevant to B::C
 comp/fold.t                  PLAN      Plan was valid
@@ -60,8 +63,6 @@ comp/proto.t                 TESTS     Test results:
 comp/uproto.t                TESTS     Test results:
 comp/use.t                   SIG       Exit signal is 11 SEGV
 io/layers.t                  TESTS     Test results:
-io/perlio_fail.t             PLAN      Plan was valid
-io/pipe.t                    PLAN      Plan was valid
 mro/c3_with_overload.t       TESTS     overload stringify
 mro/c3_with_overload_utf8.t  TESTS     overload stringify
 mro/isarev.t                 TESTS     Test results:

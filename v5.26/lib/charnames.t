@@ -19,7 +19,7 @@ my @WARN;
 BEGIN {
     unless(grep /blib/, @INC) {
 	chdir 't' if -d 't';
-	@INC = '../lib';
+	unshift @INC,  '../lib';
     }
     $SIG{__WARN__} = sub { push @WARN, @_ };
 }

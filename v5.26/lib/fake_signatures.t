@@ -2,7 +2,7 @@
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = ( '.', '../lib' );
+    unshift @INC,  ( '.', '../lib' );
     use Config;
     if (!$Config{'fake_signatures'}
         && ($Config{'ccflags'} !~ m!\bDPERL_FAKE_SIGNATURE\b!)) {

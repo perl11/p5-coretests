@@ -23,39 +23,41 @@
 # - Fields are white space delimited. It's assumed $test and $type will have no spaces in them.
 #
 
-../lib/AnyDBM_File.t         PLAN      Plan was valid
+../lib/AnyDBM_File.t         SIG       Exit signal is 6 SIGABRT
 ../lib/Benchmark.t           PLAN      Plan was valid
-../lib/blib.t                PLAN      Plan was valid
+../lib/blib.t                SIG       Exit signal is 6 SIGABRT
 ../lib/charnames.t           SIG       Exit signal is 6 SIGABRT
 ../lib/Config.t              PLAN      Plan was valid
 ../lib/DB.t                  PLAN      Plan was valid
 ../lib/diagnostics.t         PLAN      Plan was valid
-../lib/DirHandle.t           PLAN      Plan was valid
-../lib/dumpvar.t             PLAN      Plan was valid
+../lib/DirHandle.t           SIG       Exit signal is 6 SIGABRT
+../lib/dumpvar.t             SIG       Exit signal is 6 SIGABRT
 ../lib/English.t             SIG       Exit signal is 11 SEGV
 ../lib/fake_signatures.t     PLAN      Plan was valid
-../lib/FileHandle.t          PLAN      Plan was valid
-../lib/filetest.t            PLAN      Plan was valid
-../lib/integer.t             PLAN      Plan was valid
-../lib/Internals.t           PLAN      Plan was valid
-../lib/less.t                PLAN      Plan was valid
-../lib/locale.t              TESTS     Test results:
+../lib/FileHandle.t          SIG       Exit signal is 6 SIGABRT
+../lib/filetest.t            SIG       Exit signal is 6 SIGABRT
+../lib/integer.t             SIG       Exit signal is 11 SEGV
+../lib/Internals.t           SIG       Exit signal is 6 SIGABRT
+../lib/less.t                SIG       Exit signal is 6 SIGABRT
+../lib/open.t                PLAN      Plan was valid
 ../lib/overload.t            BC        ../lib/overload.c is generated (-O3,-fno-fold)
-../lib/overload64.t          PLAN      Plan was valid
+../lib/overload64.t          SIG       Exit signal is 6 SIGABRT
 ../lib/overloading.t         PLAN      Plan was valid
 ../lib/perl5db.t             TESTS     Test results:
-../lib/sort.t                PLAN      Plan was valid
-../lib/Symbol.t              PLAN      Plan was valid
+../lib/sort.t                SIG       Exit signal is 6 SIGABRT
+../lib/Symbol.t              SIG       Exit signal is 6 SIGABRT
 ../lib/Thread.t              PLAN      Plan was valid
+../lib/utf8.t                PLAN      Plan was valid
 ../lib/vars_carp.t           TESTS     Test results:
-../lib/vmsish.t              PLAN      Plan was valid
+../lib/vmsish.t              SIG       Exit signal is 6 SIGABRT
 ../lib/warnings.t            TESTS     Test results:
 base/lex.t                   PLAN      Plan was valid
 comp/final_line_num.t        COMPAT    This test is about BEGIN / file parse behavior so not relevant to B::C
+comp/fold.t                  PLAN      Plan was valid
 comp/hints.t                 COMPAT    tests are using BEGIN block, do not ready for B::C
+comp/opsubs.t                PLAN      Plan was valid
 comp/parser.t                COMPAT    We're not going to support ' as a package separator until we need to: https://github.com/rurban/perl-compiler/issues/217
 comp/proto.t                 TESTS     Test results:
-comp/require.t               PLAN      Plan was valid
 comp/uproto.t                PLAN      Plan was valid
 io/layers.t                  TESTS     Test results:
 io/open.t                    TESTS     Test results:
@@ -77,7 +79,7 @@ op/blocks.t                  COMPAT    check order of execution of special block
 op/caller.t                  PLAN      Plan was valid
 op/chdir.t                   PLAN      Plan was valid
 op/closure.t                 TESTS     Test results:
-op/const-optree.t            PLAN      Plan was valid
+op/const-optree.t            BC        op/const-optree.c is generated (-O3,-fno-fold)
 op/coreamp.t                 PLAN      Plan was valid
 op/coresubs.t                PLAN      Plan was valid
 op/coretypes.t               COMPAT    cperl only
@@ -86,43 +88,49 @@ op/current_sub.t             PLAN      Plan was valid
 op/dbm.t                     TESTS     Test results:
 op/die_keeperr.t             PLAN      Plan was valid
 op/do.t                      PLAN      Plan was valid
+op/eval.t                    PLAN      Plan was valid
 op/exec.t                    PLAN      Plan was valid
 op/exists_sub.t              SIG       Exit signal is 11 SEGV
 op/getpid.t                  PLAN      Plan was valid
 op/getppid.t                 PLAN      Plan was valid
+op/goto.t                    PLAN      Plan was valid
 op/goto_xs.t                 PLAN      Plan was valid
-op/gv.t                      TESTS     Test results:
+op/gv.t                      PLAN      Plan was valid
 op/hashwarn.t                TESTS     Test results:
 op/inccode-tie.t             SIG       Exit signal is 6 SIGABRT
-op/kvaslice.t                TESTS     Test results:
-op/kvhslice.t                TESTS     Test results:
+op/incfilter.t               PLAN      Plan was valid
+op/index.t                   PLAN      Plan was valid
+op/kvaslice.t                PLAN      Plan was valid
+op/kvhslice.t                PLAN      Plan was valid
 op/leaky-magic.t             TESTS     Test results:
 op/lex.t                     COMPAT    Tests trigger errors at compilation time (reported C issue #266 which is a small subset)
 op/lex_assign.t              PLAN      Plan was valid
 op/lexsub.t                  BC        B::SPECIAL::EGV
-op/lop.t                     TESTS     Test results:
 op/lvref.t                   SIG       Exit signal is 6 SIGABRT
-op/magic-27839.t             PLAN      Plan was valid
+op/magic-27839.t             BC        op/magic-27839.c is generated (-O3,-fno-fold)
 op/magic.t                   SIG       Exit signal is 13 SIGPIPE
 op/method.t                  PLAN      Plan was valid
 op/mkdir.t                   PLAN      Plan was valid
 op/mydef.t                   PLAN      Plan was valid
 op/override.t                COMPAT    crazy test which override CORE::GLOBAL::require @BEGIN
 op/pack.t                    SIG       Exit signal is 6 SIGABRT
+op/pos.t                     PLAN      Plan was valid
 op/postfixderef.t            TESTS     Test results:
 op/protowarn.t               PLAN      Plan was valid
 op/readline.t                TESTS     Test results:
 op/recurse.t                 PLAN      Plan was valid
 op/ref.t                     SIG       Exit signal is 11 SEGV
-op/require_errors.t          SIG       Exit signal is 11 SEGV
 op/reverse.t                 PLAN      Plan was valid
 op/signatures.t              PLAN      Plan was valid
+op/sort.t                    TESTS     Test results:
 op/split_unicode.t           SIG       Exit signal is 6 SIGABRT
 op/stash.t                   TESTS     Test results:
 op/state.t                   PLAN      Plan was valid
+op/sub.t                     BC        op/sub.c is generated (-O3,-fno-fold)
 op/sub_lval.t                TESTS     Test results:
 op/svleak.t                  COMPAT    This test uses XS::APItest, which we don't install during perl install?
 op/switch-cperl.t            COMPAT    cperl only
+op/switch.t                  PLAN      Plan was valid
 op/symbolcache.t             PLAN      Plan was valid
 op/taint.t                   PLAN      Plan was valid
 op/threads-dirh.t            SKIP      threaded test
@@ -141,36 +149,33 @@ re/overload.t                TESTS     Test results:
 re/pat.t                     PLAN      Plan was valid
 re/pat_advanced.t            SIG       Exit signal is 11 SEGV
 re/pat_re_eval.t             PLAN      Plan was valid
-re/pat_rt_report.t           SIG       Exit signal is 11 SEGV
 re/qr-72922.t                PLAN      Plan was valid
-re/qr.t                      PLAN      Plan was valid
 re/qr_gc.t                   TESTS     Test results:
 re/reg_eval_scope.t          PLAN      Plan was valid
 re/reg_fold.t                SIG       Exit signal is 6 SIGABRT
 re/reg_mesg.t                TESTS     Test results:
 re/reg_pmod.t                TESTS     Test results:
-re/regex_sets_compat.t       TESTS     Test results:
-re/regexp.t                  TESTS     Test results:
-re/regexp_notrie.t           TESTS     Test results:
-re/regexp_qr.t               TESTS     Test results:
-re/regexp_trielist.t         TESTS     Test results:
-re/rxcode.t                  TESTS     Test results:
+re/rxcode.t                  PLAN      Plan was valid
 re/speed.t                   TESTS     Test results:
 re/subst_amp.t               TESTS     Test results:
 re/uniprops.t                PLAN      Plan was valid
+uni/attrs.t                  TESTS     Test results:
 uni/caller.t                 PLAN      Plan was valid
 uni/fold.t                   SIG       Exit signal is 6 SIGABRT
 uni/greek.t                  TESTS     Failed tests:  1-6, 9-12, 17-22, 25-28, 33-35, 37-39, 49-57, 59-61, 63-68
+uni/gv.t                     PLAN      Plan was valid
 uni/keywords.t               TESTS     Failed test: 15 - throws error without utf8
 uni/latin2.t                 TESTS     Failed tests:  3-6, 13-16, 19-22, 29-32, 35, 39, 73-80
 uni/lower.t                  SIG       Exit signal is 6 SIGABRT
 uni/method.t                 PLAN      Plan was valid
 uni/opcroak.t                TESTS     Test results:
+uni/package.t                PLAN      Plan was valid
 uni/parser.t                 TESTS     Test results:
 uni/readline.t               TESTS     Test results:
 uni/stash.t                  TESTS     Test results:
 uni/title.t                  SIG       Exit signal is 6 SIGABRT
 uni/upper.t                  SIG       Exit signal is 6 SIGABRT
+uni/variables.t              PLAN      Plan was valid
 xtestc/0015.t                TESTS     Output is: "a\nb\n\n"
 xtestc/0046.t                TESTS     Output is: ""
 xtestc/0135.t                TESTS     Output is: ""

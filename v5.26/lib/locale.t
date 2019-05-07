@@ -17,7 +17,7 @@ my $test_num = 0;
 
 BEGIN {
     chdir 't' if -d 't';
-    @INC = '../lib';
+    unshift @INC,  '../lib';
     unshift @INC, '.';
     require './loc_tools.pl';
     unless (locales_enabled('LC_CTYPE')) {
